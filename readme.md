@@ -11,6 +11,6 @@ Sitios de Referencia:
 
 Integrantes:
 
-Aranda Santiago
-Carino Lucas
-Perone Santiago
+Aranda Santiago,
+Carino Lucas,
+Perone Santiago,
