@@ -13,6 +13,8 @@ Sitios de Referencia:
 Integrantes:
 
 
-Carino Lucas,
-Perone Santiago,
-Aranda Santiago, ingeniero electrico y trabaja como director de operaciones de la empresa  Lixis SA, donde desarrollan sistemas de control de calidad de medicamentos por vision artificial. Vive en Tigre, tiene dos hijos y es fanaticos de los deportes acuaticos.
+- Carino Lucas
+
+- Perone Santiago
+
+- Aranda Santiago, ingeniero electrico y trabaja como director de operaciones de la empresa  Lixis SA, donde desarrollan sistemas de control de calidad de medicamentos por vision artificial. Vive en Tigre, tiene dos hijos y es fanaticos de los deportes acuaticos.
