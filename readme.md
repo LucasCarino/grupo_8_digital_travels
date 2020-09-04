@@ -1,3 +1,9 @@
+Link al Trello:
+
+https://trello.com/invite/b/OxwTPKqb/6430b748f6127b874483e67e962dc6ce/grupo8dh
+
+
+
 Nombre de la E-Commerce: Digital Travels.
 
 Descripción:
@@ -31,5 +37,4 @@ A la hora de trabajar en equipo trato de aportar mis virtudes, como el diseño, 
 
 - Perone Santiago. 23 años. Estudiante de Ingenieria en Sonido en la Universidad Nacional de Tres de Febrero. 
 
-Trello Board:
-    https://trello.com/b/OxwTPKqb/grupo8dh
+
