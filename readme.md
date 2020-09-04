@@ -30,3 +30,6 @@ Integrantes:
 A la hora de trabajar en equipo trato de aportar mis virtudes, como el diseño, la organizacion y y en especial los detalles (soy extremadamente detallista y si hay algo que no me convence lo cambiaré hasta que me guste, no importa la dificultad que tenga), y aparte presto mucha atencion a las opiniones de todo mi equipo, para así llegar al mejor trabajo posible.
 
 - Perone Santiago. 23 años. Estudiante de Ingenieria en Sonido en la Universidad Nacional de Tres de Febrero. 
+
+Trello Board:
+    https://trello.com/b/OxwTPKqb/grupo8dh
