@@ -1,0 +1,27 @@
+{
+  "name": "digital_travels",
+  "version": "1.0.0",
+  "description": "Nombre de la E-Commerce: Digital Travels.",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasCarino/grupo_8_digital_travels.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasCarino/grupo_8_digital_travels/issues"
+  },
+  "homepage": "https://github.com/LucasCarino/grupo_8_digital_travels#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
