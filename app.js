@@ -2,8 +2,6 @@ const express = require('express');
 const app = express();
 const favicon = require('serve-favicon');
 
-let app = express();
-
 app.listen(3000, () => console.log('Server Running'));
 
 app.get('/', function (req, res) {
