@@ -4,40 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Travels | Home</title>
-    <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/68b3cfeb34.js" crossorigin="anonymous"></script>
+    <title>Document</title>
 </head>
 
 <body>
     <header>
-        <img id="logo" src="../img/logo.png" alt="logo">
-        <span id="slogan">Te acompañamos desde el primer paso</span>
-        <a class="btn btn1 link__register" href="/registro">REGÍSTRATE</a>
-        <a class="btn btn1 link__login" href="/login">INICIAR SESIÓN</a>
-        <a href="/carrito"><img id="link__shoppingcart" src="../img/shoppingcart.png" alt="carrito de compras"></a>
-        <br>
-        <br>
-        <a id="link__nav1st" href="/productos">PAQUETES</a>
-        <a class="link__nav" href="/productos">ALOJAMIENTOS</a>
-        <a class="link__nav" href="/productos">EXCURSIONES</a>
-        <a id="link__navlast" href="/productos">TRASLADOS</a>
+        <img class="logo" src="../img/logo.png" alt="logo">
+        <p id="slogan">Te acompañamos desde el primer paso</p>
+        <nav>
+            <ul class="nav__links">
+                <li class="list__item"><a href="/productos">PAQUETES</a></li>
+                <li class="list__item"><a href="/productos">ALOJAMIENTOS</a></li>
+                <li class="list__item"><a href="/productos">EXCURSIONES</a></li>
+                <li class="list__item"><a href="/productos">TRASLADOS</a></li>
+            </ul>
+        </nav>
+        <a class="cta register" href="/registro">Regístrate</a>
+        <a class="cta" href="/login">Iniciar sesión</a>
+        <a href="/carrito"><i class="fas fa-shopping-bag" alt="carrito de compras"></i></a>
         <form action="" method="GET">
-            <p class="white__text1">Destino</p>
-            <input class="product__search" type="text" name="destino" placeholder="Ingresá hacía donde viajas">
+            <p class="white__text">Destino</p>
+            <input class="search" type="text" name="destino" placeholder="Ingresá hacía donde viajas">
             <p class="white__text">Cantidad de personas</p>
-            <select class="amountpeople__search" name="personas">
+            <select class="search" name="personas">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
             </select>
-            <p class="white__text">Desde</p>
-            <input class="date__search" type="date" name="desde">
-            <p class="white__text">Hasta</p>
-            <input class="date__search" type="date" name="hasta">
-            <button class="search__button" type="submit">BUSCAR <i class="fas fa-search"></i></button>
+            <p class="date text">Desde</p>
+            <input class="date search" type="date" name="desde">
+            <p class="date text">Hasta</p>
+            <input class="date search" type="date" name="hasta">
+            <button class="search__button" type="submit">BUSCAR<i class="fas fa-search"></i></button>
         </form>
     </header>
 </body>
