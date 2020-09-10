@@ -110,26 +110,26 @@ header {
 
 
 
-/*                                          MAIN                                                    */  
+/*                                          MAIN                                                    */
 
 main {
     display: flex;
-    background-color: #24252a;
+    background-color: #f7f1e3;
     margin-top: 3vh;
-    width: 70%;
-    padding-top: 1vh;
-    margin-left: auto;
-    margin-right: auto;
     flex-wrap: wrap;
-    padding-bottom: 2vh;
+    justify-content: center;
 }
 
+/* FORM */
+
 .div__form {
+    background-color:  #24252a;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    width: 100%;
-    margin-top: 10px;
+    width: 70%;
+    padding: 3vh 0vh;
+    
 }
 
 .paquetes__form1 {
@@ -245,4 +245,120 @@ main {
 
 .fa-search {
     color: #f7f1e3;
+}
+
+/* SLIDER PROMOCION */
+
+.div__promocion {
+    display: flex;
+    width: 85%;
+    margin-top: 3vh;
+    background-color: #24252a;
+    padding: 3vh 0;
+}
+
+.promocion__ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 66%;
+    height: 65vh;
+    margin: 3vh auto;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    align-items: flex-end;
+}
+
+.promocion__ul img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.8s;
+    border: 10px solid #f7f1e3;
+}
+
+
+.promocion__ul input {
+    display: none;
+}
+
+.promocion__ul input:checked ~ img {
+    opacity: 1;
+}
+
+
+.promocion__ul input + label {
+    position: relative;
+    z-index: 1;
+    margin: 3vh 20px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #f7f1e3;
+    border-radius: 50%;
+    border: 3px solid #24252a;
+    cursor: pointer;
+}
+
+.promocion__ul input:checked + label{
+    background-color:#3E92CC;
+}
+
+/* FINANCIACIÓN */
+
+.div__financiacion {
+    display: flex;
+    width: 85%;
+    background-color: #f7f1e3;
+    justify-content: center;
+    color: #24252a;
+    height: 5vh;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+strong {
+    font-size: 110%;
+    display: flex;
+    width: 85%;
+    background-color: #f7f1e3;
+    justify-content: center;
+    color: #24252a;
+    height: 5vh;
+    flex-wrap: wrap;
+}
+
+
+.financiacion__ul {
+    margin-top: 6vh;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    list-style: none;
+    align-items: flex-start;
+    padding: 0vh 0vh;
+    align-items: center;
+    background-color: #24252a;
+}
+
+.financiacion__ul li {
+    display: flex;
+    width: 100%;
+    margin: 3vh 2%;
+    background-color: #f7f1e3;
+    border-radius: 3px;
+    transition: 0.4s;
+}
+.financiacion__ul img {
+    padding: 4vh 5%;
+    width:  100%;
+    height: 30vh;
+    object-fit: contain;
+}
+
+.financiacion__ul li:hover {
+    transform: scale(1.04);
 }
