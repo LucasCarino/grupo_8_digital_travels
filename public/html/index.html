@@ -4,108 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/68b3cfeb34.js" crossorigin="anonymous"></script>
     <title>Digital House | Home</title>
 </head>
 
 <body>
-    <header>
-        <div class="header__logo">
-            <a href="/"><img src="img/logo.png" alt="logo"></a>
-        </div>
-        <div class="header__nav">
-            <nav class="nav__cta">
-                <p id="slogan">Te acompañamos desde el primer paso.</p>
-                <div class="cta__items">
-                    <a href="/login">Ingresar</a>
-                    <a href="/register">Registrate</a>
-                    <a href="/carrito"><i class="fas fa-shopping-bag" alt="carrito de compras"></i></a>
+    <div class="container">
+        <header>
+            <div class="header__logo">
+                <a href="/"><img src="img/logo.png" alt="logo"></a>
+            </div>
+            <div class="header__nav">
+                <nav class="nav__cta">
+                    <p id="slogan">Te acompañamos desde el primer paso.</p>
+                    <div class="cta__items">
+                        <a href="/login">Ingresar</a>
+                        <a href="/registro">Registrate</a>
+                        <a href="/carrito"><i class="fas fa-shopping-bag" alt="carrito de compras"></i></a>
+                    </div>
+                </nav>
+                <nav class="nav__items">
+                    <a href="/productos">PAQUETES</a>
+                    <a href="/productos">ALOJAMIENTOS</a>
+                    <a href="/productos">EXCURSIONES</a>
+                    <a href="/productos">TRASLADOS</a>
+                </nav>
+        </header>
+        <main>
+            <form class="div__form" action="" method="GET">
+                <div class="form__text1">
+                    <p>destino</p>
+                    <p>cantidad de personas</p>
                 </div>
-            </nav>
-            <nav class="nav__items">
-                <a href="/productos">PAQUETES</a>
-                <a href="/productos">ALOJAMIENTOS</a>
-                <a href="/productos">EXCURSIONES</a>
-                <a href="/productos">TRASLADOS</a>
-            </nav>
-    </header>
-    <main>
-        <form class="div__form" action="" method="GET">
-            <div class="form__text1">
-                <p>destino</p>
-                <p>cantidad de personas</p>
+                <div class="paquetes__form1">
+                    <input class="form__item1" type="text" name="destino" placeholder="Ingresá hacía donde viajas">
+                    <select class="form__item1" name="personas">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="form__text2">
+                    <p>desde</p>
+                    <p>hasta</p>
+                </div>
+                <div class="paquetes__form2">
+                    <input class="form__item2" type="date" name="desde">
+                    <input class="form__item2" type="date" name="hasta">
+                </div>
+                <div class="div__button">
+                    <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <div class="div__promocion">
+                <ul class="promocion__ul">
+                    <li>
+                        <input type="radio" id="sbutton1" name="sradio" checked>
+                        <label for="sbutton1"></label>
+                        <img src="img/promo1.jpg" alt="promo1">
+                    </li>
+                    <li>
+                        <input type="radio" id="sbutton2" name="sradio">
+                        <label for="sbutton2"></label>
+                        <img src="img/promo2.jpg" alt="promo2">
+                    </li>
+                    <li>
+                        <input type="radio" id="sbutton3" name="sradio">
+                        <label for="sbutton3"></label>
+                        <img src="img/promo3.jpg" alt="promo3">
+                    </li>
+                    <li>
+                        <input type="radio" id="sbutton4" name="sradio">
+                        <label for="sbutton4"></label>
+                        <img src="img/promo4.jpg" alt="promo4">
+                    </li>
+                </ul>
             </div>
-            <div class="paquetes__form1">
-                <input class="form__item1" type="text" name="destino" placeholder="Ingresá hacía donde viajas">
-                <select class="form__item1" name="personas">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
+            <div class="div__financiacion">
+                <strong>
+                    <h2> financiación </h2>
+                </strong>
+                <ul class="financiacion__ul">
+                    <li>
+                        <a href="/financiacion"><img src="img/mercadoliebre_logo.png" alt="mercado liebre"></a>
+                    </li>
+                    <li>
+                        <a href="/financiacion"><img src="img/mercadopago_logo.png" alt="mercado pago"></a>
+                    </li>
+                    <li>
+                        <a href="/financiacion"><img src="img/visa_logo.png" alt="visa"></a>
+                    </li>
+                    <li>
+                        <a href="/financiacion"><img src="img/americanexpress_logo.png" alt="american express"></a>
+                    </li>
+                    <li>
+                        <a href="/financiacion"><img src="img/ahora12_logo.png" alt="ahora 12"></a>
+                    </li>
+                </ul>
             </div>
-            <div class="form__text2">
-                <p>desde</p>
-                <p>hasta</p>
+        </main>
+        <footer>
+            <div class="newsletter__container">
+                <strong>
+                    <h2>suscríbete a nuestro newsletter</h2>
+                </strong>
+                <form class="newsletter__form" action="" method="FORM">
+                    <input class="newsletter__input" type="email" name="destino" placeholder="Ingresá tu email">
+                    <button class="newsletter__button" type="submit">Enviar</button>
+                </form>
             </div>
-            <div class="paquetes__form2">
-                <input class="form__item2" type="date" name="desde">
-                <input class="form__item2" type="date" name="hasta">
+            <div class="social__icons">
+                <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
             </div>
-            <div class="div__button">
-                <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
-            </div>
-        </form>
-        </div>
-        <div class="div__promocion">
-            <ul class="promocion__ul">
-                <li>
-                    <input type="radio" id="sbutton1" name="sradio" checked>
-                    <label for="sbutton1"></label>
-                    <img src="/img/promo1.jpg" alt="promo1">
-                </li>
-                <li>
-                    <input type="radio" id="sbutton2" name="sradio">
-                    <label for="sbutton2"></label>
-                    <img src="/img/promo2.jpg" alt="promo2">
-                </li>
-                <li>
-                    <input type="radio" id="sbutton3" name="sradio">
-                    <label for="sbutton3"></label>
-                    <img src="/img/promo3.jpg" alt="promo3">
-                </li>
-                <li>
-                    <input type="radio" id="sbutton4" name="sradio">
-                    <label for="sbutton4"></label>
-                    <img src="/img/promo4.jpg" alt="promo4">
-                </li>
-            </ul>
-        </div>
-        <div class="div__financiacion">
-            <strong>
-                <h2> FINANCIACIÓN </h2>
-            </strong>
-            <ul class="financiacion__ul">
-                <li>
-                    <a href="/financiacion"><img src="/img/mercadoliebre_logo.png" alt="promo1"></a>
-                </li>
-                <li>
-                    <a href="/financiacion"><img src="/img/mercadopago_logo.png" alt="promo2"></a>
-                </li>
-                <li>
-                    <a href="/financiacion"><img src="/img/visa_logo.png" alt="promo3"></a>
-                </li>
-                <li>
-                    <a href="/financiacion"><img src="img/americanexpress_logo.png" alt="promo4"></a>
-                </li>
-                <li>
-                    <a href="/financiacion"><img src="img/ahora12_logo.png" alt="promo5"></a>
-                </li>
-            </ul>
-        </div>
-        </div>
-    </main>
+        </footer>
+    </div>
 </body>
 
 </html>
