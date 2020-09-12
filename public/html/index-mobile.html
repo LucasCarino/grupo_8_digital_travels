@@ -167,11 +167,11 @@
                     <div class="form__dates">
                         <div>
                             <label for="llegada">Llegada</label>
-                            <input type="llegada" name="llegada">
+                            <input type="date" id="llegada" name="llegada">
                         </div>
                         <div>
                             <label for="partida">Partida</label>           
-                            <input type="partida" name="partida">
+                            <input type="date" id="partida" name="partida">
                         </div>
                     </div>                      
                     <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
@@ -179,64 +179,36 @@
             </div>
         </section>
         <section class="promociones">
-            <ul class="promocion__ul">
-                <li>
-                    <input type="radio" id="sbutton1" name="sradio" checked>
-                    <label for="sbutton1"></label>
-                    <img src="img/promo1.jpg" alt="promo1">
-                </li>
-                <li>
-                    <input type="radio" id="sbutton2" name="sradio">
-                    <label for="sbutton2"></label>
-                    <img src="img/promo2.jpg" alt="promo2">
-                </li>
-                <li>
-                    <input type="radio" id="sbutton3" name="sradio">
-                    <label for="sbutton3"></label>
-                    <img src="img/promo3.jpg" alt="promo3">
-                </li>
-                <li>
-                    <input type="radio" id="sbutton4" name="sradio">
-                    <label for="sbutton4"></label>
-                    <img src="img/promo4.jpg" alt="promo4">
-                </li>
-            </ul>
+            <h2 class="section__title">Nuestras promociones</h2>
+            <a href="/productos"><img src="img/promo1.jpg" alt="promo1"></a>
+        </section>
+        <section class="payment">
+            <a href="/financiacion"><img src="img/mercadopago_logo.png" alt="mercado pago"></a>
+            <a href="/financiacion"><img src="img/visa_logo.png" alt="visa"></a>
+            <a href="/financiacion"><img src="img/americanexpress_logo.png" alt="american express"></a>
+            <a href="/financiacion"><img src="img/ahora12_logo.png" alt="ahora 12"></a>
         </section>
     </main>
 
     <footer>
-        <article>
-            <!-- <i class="far fa-credit-card"></i> -->
-            <img src="https://http2.mlstatic.com/resources/frontend/homes-korriban/assets/images/ecosystem/payment.svg" alt="payment">
-            <h3 class="footer-title">Pagá con tarjeta o en efectivo</h3>
-            <p class="footer-text">
-                Con Mercado Pago, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!
-            </p>
-            <a href="/mercado-pago">Cómo pagar con Mercado Pago</a>            
+        <article class="newsletter__container">
+            <strong>
+                <h3 class="newsletter__title">Suscribite a nuestro newsletter</h3>
+            </strong>
+            <form class="newsletter__form" action="" method="FORM">
+                <input class="newsletter__input" type="email" name="destino" placeholder="Ingresá tu email">
+                <button class="newsletter__button" type="submit">Enviar</button>
+            </form>
         </article>
-        <article>
-            <!-- <i class="fas fa-gift"></i> -->
-            <img src="https://http2.mlstatic.com/resources/frontend/homes-korriban/assets/images/ecosystem/shipping.svg" alt="shipping">
-            <h3 class="footer-title">Envío gratis desde $ 2500</h3>
-            <p class="footer-text">
-                Solo por estar registrado en Mercado Liebre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.
-            </p>
-            <a href="/mercado-puntos">Conoce más sobre este beneficio</a>            
+        <article class="social__icons">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
         </article>
-        <article>
-            <!-- <i class="fas fa-shield-alt"></i> -->
-            <img src="https://http2.mlstatic.com/resources/frontend/homes-korriban/assets/images/ecosystem/protected.svg" alt="protected">
-            <h3 class="footer-title">Seguridad, de principio a fin</h3>
-            <p class="footer-text">
-                ¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás siempre protegido.
-            </p>
-            <a href="/security">Cómo te protegemos</a>            
-        </article>
-
-
         <div class="copyright">
-            <h4><a href="/terms">Términos y condiciones</a> <a href="/privacy">Cómo cuidamos tu privacidad</a></h4>
-            <p>© 1999-2020 Mercado Liebre S.R.L.</p>
+            <h4><a href="/terms">Términos y condiciones</a></h4>
+            <p>©2020 Digital Travels S.A.</p>
             <p>Calle Falsa 123, Springfield</p>
 
         </div>
