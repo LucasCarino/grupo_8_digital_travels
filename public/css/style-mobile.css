@@ -13,9 +13,9 @@
     --dt-titles: black;
     --dt-text: gray;
     --dt-selected: #3e92cc;
-    --dt-background: #f7f1e3;
+    --dt-background: white;
     --dt-searchbackground: #24252a;
-    --dt-searchinput: #efefe3;
+    --dt-searchinput: white;
     --dt-placeholders: gray
 }
 body{
@@ -512,4 +512,10 @@ footer a {
     color: var(--dt-lightblue);
     font-size: 16px;
     text-decoration: none;    
+}
+/* .login__remember {
+    display: flex;
+} */
+#rememberme {
+    width: auto;
 }
