@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Digital Travels</title>
+    <link rel="stylesheet" href="css/style-mobile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/45c142d7bc.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="header__logo" href="/">
+                <img src="img/logo-dtva.svg" alt="logo" class="navicon">
+                <img src="/img/digital-travels.svg" alt="digital travels" id="logo-title">
+            </a>
+            <div class="menuicon">
+                <i class="fas fa-user" id="accounticon" onclick="navDisplay(this)"></i>
+                <a href="/carrito" id="navcart"><i class="fas fa-luggage-cart"></i></a>
+            </div>
+            <script>
+                function navDisplay(a) {
+                    a.classList.toggle("change");
+                    var x = document.getElementById("nav-menu-mobile");
+                    if (x.style.display === "flex") {
+                        x.style.display = "none";
+                    } else {
+                        x.style.display = "flex";
+                    }
+                    var y = document.getElementById("categories");
+                    if (y.style.display === "none") {
+                        y.style.display = "flex";
+                    } else {
+                        y.style.display = "none";
+                    }
+                }
+            </script>
+        </nav>
+        <div id="categories">
+            <div class="change category" onclick="searchBar(this, getElementById('searchPaquetes'))">
+                <i class="fas fa-suitcase fa-fw"></i>
+                <h3>Paquetes</h3>
+            </div>
+            <div class="category" onclick="searchBar(this, getElementById('searchAlojamientos'))">
+                <i class="fas fa-hotel fa-fw"></i>
+                <h3>Alojamientos</h3>
+            </div>
+            <div class="category" onclick="searchBar(this, getElementById('searchExcursiones'))">
+                <i class="fas fa-mountain fa-fw"></i>
+                <h3>Excursiones</h3>
+            </div>
+            <div class="category" onclick="searchBar(this, getElementById('searchTraslados'))">
+                <i class="fas fa-shuttle-van fa-fw"></i>
+                <h3>Traslados</h3>
+            </div>
+            <script>
+                function searchBar(x, name) {
+                    icons = document.getElementsByClassName("category");
+                    for (let i = 0; i < icons.length; i++) {
+                        icons[i].classList.toggle("change", false);                        
+                    }               
+                    x.classList.toggle("change");
+                    search = document.getElementsByClassName("nav-search");
+                    for (let i = 0; i < search.length; i++) {
+                        search[i].classList.toggle("hide", true);                      
+                    }
+                    name.classList.toggle("hide");
+                }
+            </script>
+        </div>    
+        <!-- <h3>Comprá en cuotas y sin tarjeta de crédito</h3> ubicacion -->
+        <div id="nav-menu-mobile">
+            <div class="nav-header-user-menu">
+                <div class="nav-header-mobile-user-info">
+                    <div class="nav-user-icon"><i class="far fa-user"></i></div>
+                    <div class="nav-mobile-user-welcome">
+                        <h3 class="nav-mobile-user-title">Bienvenido</h3>
+                        <p class="nav-mobile-user-text">Ingresá a tu cuenta para gestionar tu próximo viaje</p>
+                    </div>                
+                </div>
+                <div class="nav-mobile-user-buttons">
+                    <a class="nav-mobile-button-filled" href="/login">Ingresá</a>
+                    <a class="nav-mobile-button-outlined" href="/registro">Creá tu cuenta</a>
+                </div>
+            </div>
+            <div class="nav-menu-section">
+                <a href="/help"><i class="far fa-question-circle"></i>Ayuda</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="search__bar">
+            <div class="nav-search" id="searchPaquetes">
+                <h2 class="search__title">Paquetes turisticos</h2>
+                <form class="search__form" action="/paquetes" method="GET">
+                    <label for="destino">Destino</label>
+                    <input type="text" id="destino" name="destino" placeholder="Ingresá hacia dónde viajás">
+                    <label for="personas">Cantidad de personas</label>
+                    <select name="personas">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <div class="form__dates">
+                        <div>
+                            <label for="desde">Desde</label>
+                            <input type="date" name="desde">
+                        </div>
+                        <div>
+                            <label for="hasta">Hasta</label>           
+                            <input type="date" name="hasta">
+                        </div>
+                    </div>                      
+                    <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="hide nav-search" id="searchAlojamientos">
+                <h2 class="search__title">Encontrá tu hotel ideal</h2>
+                <form class="search__form" action="/hoteles" method="GET">
+                    <label for="destino">Destino</label>
+                    <input type="text" id="destino" name="destino" placeholder="Ingresá hacía donde viajas">
+                    <label for="personas">Cantidad de personas</label>
+                    <select name="personas">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <div class="form__dates">
+                        <div>
+                            <label for="desde">Desde</label>
+                            <input type="date" name="desde">
+                        </div>
+                        <div>
+                            <label for="hasta">Hasta</label>           
+                            <input type="date" name="hasta">
+                        </div>
+                    </div>                      
+                    <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="hide nav-search" id="searchExcursiones">
+                <h2 class="search__title">Actividades para tu viaje</h2>
+                <form class="search__form" action="/excursiones" method="GET">
+                    <label for="destino">Destino</label>
+                    <input type="text" id="destino" name="destino" placeholder="Ingresá el destino al que viajás">
+                    <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="hide nav-search" id="searchTraslados">
+                <h2 class="search__title">Traslados desde y hacia tu hotel</h2>
+                <form class="search__form" action="/traslados" method="GET">
+                    <label for="desde">Desde</label>
+                    <input type="text" id="desde" name="desde" placeholder="Ingresá tu terminal o aeropuerto de llegada">
+                    <label for="hacia">Hacia</label>
+                    <input type="text" id="hacia" name="hacia" placeholder="Ingresá la dirección de tu hotel">
+                    <label for="personas">Cantidad de personas</label>
+                    <select name="personas">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <div class="form__dates">
+                        <div>
+                            <label for="llegada">Llegada</label>
+                            <input type="llegada" name="llegada">
+                        </div>
+                        <div>
+                            <label for="partida">Partida</label>           
+                            <input type="partida" name="partida">
+                        </div>
+                    </div>                      
+                    <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </section>
+        <section class="promociones">
+            <ul class="promocion__ul">
+                <li>
+                    <input type="radio" id="sbutton1" name="sradio" checked>
+                    <label for="sbutton1"></label>
+                    <img src="img/promo1.jpg" alt="promo1">
+                </li>
+                <li>
+                    <input type="radio" id="sbutton2" name="sradio">
+                    <label for="sbutton2"></label>
+                    <img src="img/promo2.jpg" alt="promo2">
+                </li>
+                <li>
+                    <input type="radio" id="sbutton3" name="sradio">
+                    <label for="sbutton3"></label>
+                    <img src="img/promo3.jpg" alt="promo3">
+                </li>
+                <li>
+                    <input type="radio" id="sbutton4" name="sradio">
+                    <label for="sbutton4"></label>
+                    <img src="img/promo4.jpg" alt="promo4">
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <article>
+            <!-- <i class="far fa-credit-card"></i> -->
+            <img src="https://http2.mlstatic.com/resources/frontend/homes-korriban/assets/images/ecosystem/payment.svg" alt="payment">
+            <h3 class="footer-title">Pagá con tarjeta o en efectivo</h3>
+            <p class="footer-text">
+                Con Mercado Pago, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es seguro!
+            </p>
+            <a href="/mercado-pago">Cómo pagar con Mercado Pago</a>            
+        </article>
+        <article>
+            <!-- <i class="fas fa-gift"></i> -->
+            <img src="https://http2.mlstatic.com/resources/frontend/homes-korriban/assets/images/ecosystem/shipping.svg" alt="shipping">
+            <h3 class="footer-title">Envío gratis desde $ 2500</h3>
+            <p class="footer-text">
+                Solo por estar registrado en Mercado Liebre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.
+            </p>
+            <a href="/mercado-puntos">Conoce más sobre este beneficio</a>            
+        </article>
+        <article>
+            <!-- <i class="fas fa-shield-alt"></i> -->
+            <img src="https://http2.mlstatic.com/resources/frontend/homes-korriban/assets/images/ecosystem/protected.svg" alt="protected">
+            <h3 class="footer-title">Seguridad, de principio a fin</h3>
+            <p class="footer-text">
+                ¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás siempre protegido.
+            </p>
+            <a href="/security">Cómo te protegemos</a>            
+        </article>
+
+
+        <div class="copyright">
+            <h4><a href="/terms">Términos y condiciones</a> <a href="/privacy">Cómo cuidamos tu privacidad</a></h4>
+            <p>© 1999-2020 Mercado Liebre S.R.L.</p>
+            <p>Calle Falsa 123, Springfield</p>
+
+        </div>
+    </footer>
+</body>
+</html>
