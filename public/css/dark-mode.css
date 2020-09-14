@@ -2,7 +2,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 }
 
 :root {
@@ -96,7 +95,6 @@
 
 /* DARK MODE ACTIVADO */
 
-
 .dark-mode * {
 	transition: 1s;
 }
@@ -125,6 +123,27 @@
 	color: #f7f1e3;
 }
 
+.dark-mode #nav-menu-mobile {
+	background-color: #24252a;
+}
+.dark-mode .nav-mobile-user-title {
+    color: #f7f1e3;
+}
+.dark-mode .nav-mobile-user-text {
+    color: rgba(255, 255, 255, 0.8);
+}
+.dark-mode .nav-menu-section a {
+    color: rgba(255, 255, 255, 0.8);
+}
+.dark-mode .nav-mobile-button-filled {
+    background-color:#130f40;
+    color: white;
+}
+.dark-mode .nav-mobile-button-outlined {
+    background-color:#24252a;
+    color: var(--dt-lightblue);
+    border: 1px solid var(--dt-lightblue);
+}
 /* NAVIGATION BAR */
 
 
@@ -265,8 +284,42 @@
     color: #f7f1e36b;
 }
 
+/* 									PRODUCT DETAIL 										*/
 
-/* DESKTOP */
+.dark-mode .product__article {
+    background-color: #130f40;
+}
+
+.dark-mode .product__article h2 {
+    color: #f7f1e3;
+}
+.dark-mode .product__article h3 {
+    color: #f7f1e3;
+}
+
+.dark-mode .product__article p {
+    color: #f7f1e3;
+}
+
+.dark-mode .productimg__div img {
+    border: 2px solid #f7f1e3;
+}
+
+.dark-mode .article__price {
+    border-top: 3px solid #f7f1e3;
+}
+
+.dark-mode .product__article button {
+	background-color: var(--dt-darkblue);
+	color: var(--dt-searchinput);
+}
+
+.dark-mode .product__detail h2 {
+	background-color: #24252a;
+}
+
+/* 										DESKTOP 										*/
+
 @media (min-width:1024px){
 
 	#darkmode__form, .toggle {
@@ -274,161 +327,198 @@
 		top: 1vh;
 		position: absolute;
 	}
+		
+	.dark-mode * {
+		transition: 1s;
+	}
+
+	.dark-mode body {
+		background-color: #24252a;
+	}
+
+	.dark-mode .toggle {
+		background-color: #347fc4;
+	}
+
+	.dark-mode .toggle:before {
+		background: #ffd32a;
+	}
+
+
+	/*                                              HEADER                                                 */   
+
+	.dark-mode header {
+		background-color: #130f40;
+	}
+
+
+	.dark-mode #slogan {
+		color: #f7f1e3;
+	}
+
+	/* NAVIGATION BAR */
+
+
+	.dark-mode .cta__items a {
+		color: #f7f1e3;
+		background-color: #347fc4;
+	}
+
+	.dark-mode .cta__items a:hover{
+		background-color: #347ec4a8;
+	}
+
+	.dark-mode .cta__items a:active {
+		background-color: #c2eabd00;
+	}
+
+	.dark-mode .nav__items a {
+		color: #f7f1e3;
+	}
+
+	.dark-mode .nav__items a:hover{
+		color: #347fc4;
+	}
+
+
+	/*                                          MAIN                                                    */
+
+
+	.dark-mode main {
+		background-color: #24252a;
+	}
+
+	/* FORM */
+
+	.dark-mode .search__form {
+		background-color:  #130f40;
+	}
+
+	.dark-mode ::placeholder {
+		color: #130f40;
+	}
+
+
+	.dark-mode .search__button {
+		background-color: #347fc4;
+		color: #f7f1e3;
+	}
+
+	.dark-mode .search__button:hover {
+		background-color: #3e91cca6;
+		
+	}
+
+	.dark-mode .search__button:active {
+		background-color: #3e91cc00;
+	}
+
+	.dark-mode .fa-search {
+		color: #f7f1e3;
+	}
+
+	/* SLIDER PROMOCION */
+
+	.dark-mode .promociones {
+		background-color:#130f40;
+	}
+
+
+	.dark-mode .promociones img {
+		border: 10px solid #24252a;
+	}
+
+	/* FINANCIACIÓN */
+
+	.dark-mode .payment {
+		background-color: #130f40;
+		color: #f7f1e3;
+	}
+
+	.dark-mode .section__title {
+		background-color: #24252a;
+		color: #f7f1e3;
+	}
+
+	.dark-mode .payment a{
+		background-color: #130f40;
+	}
+
+	.dark-mode .payment img {
+		background-color:#24252a;
+	}
+	/*                                             FOOTER                                                 */
+
+	.dark-mode footer {
+		background-color: #130f40;
+	}
+
+	/* NEWSLETTER */
+
+	.dark-mode .newsletter__container {
+		background-color: #24252a
+	}
+
+
+	.dark-mode .newsletter__input {
+		border: 1px solid #c2eabd;
+		background-color: #f7f1e3;
+	}
+
+	.dark-mode .newsletter__input:focus {
+		border: 1px solid #347fc4;
+	}
+
+	.dark-mode .newsletter__button {
+		background-color: #347fc4;
+		color: #f7f1e3;
+	}
+
+
+	.dark-mode .newsletter__button:hover{
+		background-color: #3e91cca6;
+	}
+
+	/* REDES SOCIALES */
+
+	.dark-mode .social__icons {
+		background-color: #24252a;
+	}
+
+	.dark-mode .social__icons i {
+		color: #f7f1e3;
+	}
+
+	.dark-mode .fab:hover {
+		color: #f7f1e36b;
+	}
+
+
+/* 									PRODUCT DETAIL 										*/
+
+
+
+	.dark-mode .product__article {
+		background-color: #130f40;
+	}
+
+
+
+	.dark-mode .product__article h3 {
+		color: #f7f1e3;
+	}
+
+	.dark-mode .product__article p {
+		color: #f7f1e3;
+	}
+
+	.dark-mode .productimg__div img {
+		border: 2px solid #f7f1e3;
+	}
+
+	.dark-mode .article__price {
+		border-top: 3px solid #f7f1e3;
+	}
 	
-.dark-mode * {
-	transition: 1s;
-}
 
-.dark-mode body {
-	background-color: #24252a;
-}
-
-.dark-mode .toggle {
-	background-color: #347fc4;
-}
-
-.dark-mode .toggle:before {
-	background: #ffd32a;
-}
-
-
-/*                                              HEADER                                                 */   
-
-.dark-mode header {
-	background-color: #130f40;
-}
-
-
-.dark-mode #slogan {
-	color: #f7f1e3;
-}
-
-/* NAVIGATION BAR */
-
-
-.dark-mode .cta__items a {
-    color: #f7f1e3;
-	background-color: #347fc4;
-}
-
-.dark-mode .cta__items a:hover{
-	background-color: #347ec4a8;
-}
-
-.dark-mode .cta__items a:active {
-    background-color: #c2eabd00;
-}
-
-.dark-mode .nav__items a {
-	color: #f7f1e3;
-}
-
-.dark-mode .nav__items a:hover{
-	color: #347fc4;
-}
-
-
-/*                                          MAIN                                                    */
-
-
-.dark-mode main {
-	background-color: #24252a;
-}
-
-/* FORM */
-
-.dark-mode .search__form {
-    background-color:  #130f40;
-}
-
-.dark-mode ::placeholder {
-    color: #130f40;
-}
-
-
-.dark-mode .search__button {
-    background-color: #347fc4;
-    color: #f7f1e3;
-}
-
-.dark-mode .search__button:hover {
-	background-color: #3e91cca6;
-	
-}
-
-.dark-mode .search__button:active {
-    background-color: #3e91cc00;
-}
-
-.dark-mode .fa-search {
-    color: #f7f1e3;
-}
-
-/* SLIDER PROMOCION */
-
-.dark-mode .promociones {
-    background-color:#130f40;
-}
-
-
-.dark-mode .promociones img {
-    border: 10px solid #24252a;
-}
-
-/* FINANCIACIÓN */
-
-.dark-mode .payment{
-    background-color: #130f40;
-    color: #f7f1e3;
-}
-
-.dark-mode .section__title {
-	background-color: #24252a;
-	color: #f7f1e3;
-}
-/*                                             FOOTER                                                 */
-
-.dark-mode footer {
-    background-color: #130f40;
-}
-
-/* NEWSLETTER */
-
-.dark-mode .newsletter__container {
-    background-color: #24252a
-}
-
-
-.dark-mode .newsletter__input {
-    border: 1px solid #c2eabd;
-    background-color: #f7f1e3;
-}
-
-.dark-mode .newsletter__input:focus {
-    border: 1px solid #347fc4;
-}
-
-.dark-mode .newsletter__button {
-    background-color: #347fc4;
-    color: #f7f1e3;
-}
-
-
-.dark-mode .newsletter__button:hover{
-    background-color: #3e91cca6;
-}
-
-/* REDES SOCIALES */
-
-.dark-mode .social__icons {
-	background-color: #24252a;
-}
-
-.dark-mode .social__icons i {
-    color: #f7f1e3;
-}
-
-.dark-mode .fab:hover {
-    color: #f7f1e36b;
-}
 }
