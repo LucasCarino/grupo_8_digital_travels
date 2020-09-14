@@ -1,0 +1,434 @@
+#darkmode__form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+:root {
+	--dur: 0.3s;
+}
+
+#darkmode__form, .toggle:before, .toggle:after {
+    background: #f7f1e3;
+}
+
+#darkmode__form, .toggle {
+    right: 40%;
+    top: 1vh;
+    position: absolute;
+}
+
+.curtain, .sr, .toggle:before, .toggle:after {
+	position: absolute;
+}
+.curtain, .toggle:before, .toggle:after {
+	transition: transform var(--dur);
+}
+
+.curtain, .toggle:before, .toggle:checked:after  {
+	transition-timing-function: ease-out;
+}
+
+.curtain, .sr {
+	top: 0;
+	left: 0;
+}
+.curtain {
+	background: transparent;
+	mix-blend-mode: difference;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	transform: scaleX(0);
+	transform-origin: 0 50%;
+}
+.sr, .toggle {
+	overflow: hidden;
+}
+.sr {
+	clip: rect(1px,1px,1px,1px);
+	color: transparent;
+	width: 1px;
+	height: 1px;
+}
+.toggle {
+	background-color: #130f40;
+	border-radius: 0.75em;
+	cursor: pointer;
+	width: 3em;
+	height: 1.5em;
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.toggle:before, .toggle:after {
+	border-radius: 50%;
+	content: "";
+	display: block;
+	top: 0.25em;
+	left: 0.25em;
+	width: 1em;
+	height: 1em;
+}
+.toggle:before, .toggle:checked:after {
+	transition-delay: 0s;
+}
+.toggle:checked:before, .toggle:after {
+	transition-delay: calc(var(--dur) * 0.75);
+	transition-timing-function: cubic-bezier(0.3,1.6,0.5,0.7);
+}
+.toggle:before {
+	transform: translateX(-1.5em);
+}
+.toggle:checked:before {
+	transform: translateX(1.5em);
+}
+.toggle:checked:after {
+	transform: translateX(3em);
+}
+.toggle:checked ~ .curtain {
+	transform: scaleX(1);
+}
+.toggle:focus {
+	outline: transparent;
+}
+
+/* DARK MODE ACTIVADO */
+
+
+.dark-mode * {
+	transition: 1s;
+}
+
+.dark-mode body {
+	background-color: #24252a;
+}
+
+.dark-mode .toggle {
+	background-color: #347fc4;
+}
+
+.dark-mode .toggle:before {
+	background: #ffd32a;
+}
+
+
+/*                                              HEADER                                                 */   
+
+.dark-mode header {
+	background-color: #130f40;
+}
+
+
+.dark-mode #slogan {
+	color: #f7f1e3;
+}
+
+/* NAVIGATION BAR */
+
+
+.dark-mode .cta__items a {
+    color: #f7f1e3;
+	background-color: #347fc4;
+}
+
+.dark-mode .cta__items a:hover{
+	background-color: #347ec4a8;
+}
+
+.dark-mode .cta__items a:active {
+    background-color: #c2eabd00;
+}
+
+.dark-mode .nav__items a {
+	color: #f7f1e3;
+}
+
+.dark-mode .nav__items a:hover{
+	color: #347fc4;
+}
+
+
+/*                                          MAIN                                                    */
+
+.dark-mode .search__bar {
+    background-color: #130f40;
+}
+
+.dark-mode main {
+	background-color: #24252a;
+}
+
+/* FORM */
+
+.dark-mode .search__form {
+    background-color:  #130f40;
+}
+
+.dark-mode ::placeholder {
+    color: #130f40;
+}
+
+
+.dark-mode .search__button {
+    background-color: #347fc4;
+    color: #f7f1e3;
+}
+
+.dark-mode .search__button:hover {
+	background-color: #3e91cca6;
+	
+}
+
+.dark-mode .search__button:active {
+    background-color: #3e91cc00;
+}
+
+.dark-mode .fa-search {
+    color: #f7f1e3;
+}
+
+/* SLIDER PROMOCION */
+
+.dark-mode .promociones {
+	background-color:#130f40;
+}
+
+
+/* FINANCIACIÓN */
+
+.dark-mode .payment{
+    background-color: #24252a;
+    color: #f7f1e3;
+}
+
+.dark-mode .payment img{
+    background-color: #24252a;
+}
+
+.dark-mode .payment a{
+    background-color: #24252a;
+}
+
+.dark-mode .section__title {
+	background-color: #130f40;
+	color: #f7f1e3;
+}
+
+.dark-mode .newsletter__container h2{
+	background-color: #24252a;
+}
+/*                                             FOOTER                                                 */
+
+.dark-mode footer {
+    background-color: #130f40;
+}
+
+/* NEWSLETTER */
+
+.dark-mode .newsletter__container {
+    background-color: #24252a
+}
+
+
+.dark-mode .newsletter__input {
+    border: 1px solid #c2eabd;
+    background-color: #f7f1e3;
+}
+
+.dark-mode .newsletter__input:focus {
+    border: 1px solid #347fc4;
+}
+
+.dark-mode .newsletter__button {
+    background-color: #347fc4;
+    color: #f7f1e3;
+}
+
+
+.dark-mode .newsletter__button:hover{
+    background-color: #3e91cca6;
+}
+
+/* REDES SOCIALES */
+
+.dark-mode .social__icons {
+	background-color: #24252a;
+}
+
+.dark-mode .social__icons i {
+    color: #f7f1e3;
+}
+
+.dark-mode .fab:hover {
+    color: #f7f1e36b;
+}
+
+
+/* DESKTOP */
+@media (min-width:1024px){
+
+	#darkmode__form, .toggle {
+		right: 1vw;
+		top: 1vh;
+		position: absolute;
+	}
+	
+.dark-mode * {
+	transition: 1s;
+}
+
+.dark-mode body {
+	background-color: #24252a;
+}
+
+.dark-mode .toggle {
+	background-color: #347fc4;
+}
+
+.dark-mode .toggle:before {
+	background: #ffd32a;
+}
+
+
+/*                                              HEADER                                                 */   
+
+.dark-mode header {
+	background-color: #130f40;
+}
+
+
+.dark-mode #slogan {
+	color: #f7f1e3;
+}
+
+/* NAVIGATION BAR */
+
+
+.dark-mode .cta__items a {
+    color: #f7f1e3;
+	background-color: #347fc4;
+}
+
+.dark-mode .cta__items a:hover{
+	background-color: #347ec4a8;
+}
+
+.dark-mode .cta__items a:active {
+    background-color: #c2eabd00;
+}
+
+.dark-mode .nav__items a {
+	color: #f7f1e3;
+}
+
+.dark-mode .nav__items a:hover{
+	color: #347fc4;
+}
+
+
+/*                                          MAIN                                                    */
+
+
+.dark-mode main {
+	background-color: #24252a;
+}
+
+/* FORM */
+
+.dark-mode .search__form {
+    background-color:  #130f40;
+}
+
+.dark-mode ::placeholder {
+    color: #130f40;
+}
+
+
+.dark-mode .search__button {
+    background-color: #347fc4;
+    color: #f7f1e3;
+}
+
+.dark-mode .search__button:hover {
+	background-color: #3e91cca6;
+	
+}
+
+.dark-mode .search__button:active {
+    background-color: #3e91cc00;
+}
+
+.dark-mode .fa-search {
+    color: #f7f1e3;
+}
+
+/* SLIDER PROMOCION */
+
+.dark-mode .promociones {
+    background-color:#130f40;
+}
+
+
+.dark-mode .promociones img {
+    border: 10px solid #24252a;
+}
+
+/* FINANCIACIÓN */
+
+.dark-mode .payment{
+    background-color: #130f40;
+    color: #f7f1e3;
+}
+
+.dark-mode .section__title {
+	background-color: #24252a;
+	color: #f7f1e3;
+}
+/*                                             FOOTER                                                 */
+
+.dark-mode footer {
+    background-color: #130f40;
+}
+
+/* NEWSLETTER */
+
+.dark-mode .newsletter__container {
+    background-color: #24252a
+}
+
+
+.dark-mode .newsletter__input {
+    border: 1px solid #c2eabd;
+    background-color: #f7f1e3;
+}
+
+.dark-mode .newsletter__input:focus {
+    border: 1px solid #347fc4;
+}
+
+.dark-mode .newsletter__button {
+    background-color: #347fc4;
+    color: #f7f1e3;
+}
+
+
+.dark-mode .newsletter__button:hover{
+    background-color: #3e91cca6;
+}
+
+/* REDES SOCIALES */
+
+.dark-mode .social__icons {
+	background-color: #24252a;
+}
+
+.dark-mode .social__icons i {
+    color: #f7f1e3;
+}
+
+.dark-mode .fab:hover {
+    color: #f7f1e36b;
+}
+}
