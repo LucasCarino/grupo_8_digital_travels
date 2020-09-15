@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate en Mercado Liebre</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/45c142d7bc.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -20,13 +21,9 @@
                     <img src="img/logo-dtva.svg" alt="logo" class="navicon">
                     <img src="/img/digital-travels.svg" alt="digital travels" id="logo-title">
                 </a>
-                <!-- <div class="menuicon">
-                <i class="far fa-user" id="usericon" onclick="navDisplay()"></i>
-                <a href="/carrito" id="navcart"><i class="fas fa-luggage-cart"></i></a>
-            </div> -->
             </nav>
         </header>
-        <main>
+        <main class="register__main">
             <h1 class="user-form-title">Completá tus datos</h1>
             <form class="register__form" action="/" method="POST">
                 <div>
@@ -65,19 +62,18 @@
             </form>
         </main>
         <footer>
-            <article class="social__icons">
-                <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-            </article>
             <div class="copyright">
                 <h4><a href="/terms">Términos y condiciones</a></h4>
                 <p>©2020 Digital Travels S.A.</p>
                 <p>Calle Falsa 123, Springfield</p>
-
             </div>
         </footer>
+        <form id="darkmode__form">
+            <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch" value="on"
+                onclick="document.documentElement.classList.toggle('dark-mode')">
+            <label for="dark-mode" class="sr">Dark Mode</label>
+            <div class="curtain"></div>
+        </form>
     </div>
 </body>
 

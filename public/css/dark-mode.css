@@ -545,4 +545,8 @@
 		border: 1px solid #130f40;
 	}
 
+	.dark-mode .register__main {
+		background-color:black;
+		border: 1px solid #130f40;
+	}
 }
