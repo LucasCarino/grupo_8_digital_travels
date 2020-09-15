@@ -1271,7 +1271,7 @@ main {
         flex-wrap: wrap;
         border-radius: 0px;
         margin: 1vh 0;
-        width: 100%;
+        width: 85%;
         justify-content: space-around;
         border: 2px solid #347fc4;
     }
