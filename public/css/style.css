@@ -383,14 +383,57 @@ main {
     align-items: center;
     justify-content: center;
 }
+.payment a img {
+    width: 100%;
+}
 .financiacion__title {
     text-align: center;
+}
+
+/****************** CARRITO ******************/
+.product__cart {
+    border-radius: 3px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+.product__cart article {
+    display: flex;
+}
+.cart__img {
+    flex: 0 0 30%;
+    margin-right: 4px;
+    align-self: center;
+}
+.cart__img img {
+    width: 100%;
+}
+.cart__desc {
+    display: flex;
+    flex-direction: column;
+}
+.cart__desc h3 {
+    margin: 0;
+    font-size: 14px;
+}
+.cart__desc p {
+    margin: 0;
+    font-size: 12px;
+}
+.cart__desc h4 {
+    margin: 0;
+    font-size: 13px;
+}
+.cart__semitotal {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
 }
 
 /***************************************FOOTER********************************************/
 
 footer article {
-    border-bottom: 1.5px solid rgba(90,90,90,0.1);
+    border-bottom: 1.5px solid rgba(26, 24, 24, 0.1);
     text-align: center;
     padding: 20px;
 }
@@ -593,7 +636,7 @@ main {
 .register__form input:focus {
     border-width: 0 0 2px;
     border-color: var(--dt-blue);
-    color: black;
+    color: var(--dt-blue);
 }
 .register__form input:valid {
     color: black;
@@ -877,9 +920,6 @@ main {
         display: none;
     }
     .nav-header-mobile-user-info {
-        display: none;
-    }
-    .payment {
         display: none;
     }
     .nav-user-icon {
