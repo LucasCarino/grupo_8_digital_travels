@@ -318,6 +318,24 @@
 	background-color: #24252a;
 }
 
+/* 										LOGIN 											*/	
+
+.dark-mode .register__form {
+    color: rgba(255,255,255,.45);
+}
+
+.dark-mode .register__form input {
+	background-color:transparent;
+    border-color: rgba(0,0,0,.2); 
+}
+
+.dark-mode .user-form-title {
+	color: white;
+}
+
+.dark-mode .submit-button {
+	background-color: #130f40;
+}
 /* 										DESKTOP 										*/
 
 @media (min-width:1024px){
@@ -520,5 +538,11 @@
 		border-top: 3px solid #f7f1e3;
 	}
 	
+	/* 									LOGIN 											*/
+
+	.dark-mode .login__main {
+		background-color:black;
+		border: 1px solid #130f40;
+	}
 
 }
