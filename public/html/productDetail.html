@@ -21,7 +21,13 @@
                 </a>
                 <div class="menuicon">
                     <i class="fas fa-user" id="accounticon" onclick="navDisplay(this)"></i>
-                    <a href="/carrito" id="navcart"><i class="fas fa-luggage-cart"></i></a>
+                    <a href="/carrito" id="navcart"><i class="fas fa-suitcase-rolling"></i></a>
+                    <form id="darkmode__form">
+                        <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch" value="on"
+                            onclick="document.documentElement.classList.toggle('dark-mode')">
+                        <label for="dark-mode" class="sr">Dark Mode</label>
+                        <div class="curtain"></div>
+                    </form>
                 </div>
                 <script>
                     function navDisplay(a) {
@@ -45,7 +51,13 @@
                     <div class="cta__items">
                         <a href="/login">Ingresar</a>
                         <a href="/registro">Regístrate</a>
-                        <a href="/carrito"><i class="fas fa-shopping-bag" alt="carrito de compras"></i></a>
+                        <a href="/carrito"><i class="fas fa-suitcase-rolling"></i></a>
+                        <form id="darkmode__form">
+                            <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch"
+                                value="on" onclick="document.documentElement.classList.toggle('dark-mode')">
+                            <label for="dark-mode" class="sr">Dark Mode</label>
+                            <div class="curtain"></div>
+                        </form>
                     </div>
                 </nav>
             </nav>
@@ -340,12 +352,6 @@
                 <p>Calle Falsa 123, Springfield</p>
             </div>
         </footer>
-        <form id="darkmode__form">
-            <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch" value="on"
-                onclick="document.documentElement.classList.toggle('dark-mode')">
-            <label for="dark-mode" class="sr">Dark Mode</label>
-            <div class="curtain"></div>
-        </form>
     </div>
 </body>
 

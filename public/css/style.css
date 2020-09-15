@@ -13,6 +13,7 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     outline: none;
     transition: 1s;
+    border: 1px solid red;
 }
 :root {
     --dt-graytext: #ededed;
@@ -287,10 +288,7 @@ main {
 .search__form__traslados select {
     margin-top: 5px;
 }
-.form__input__traslados {
-    display: flex;
-    flex-direction: column;
-}
+
 .form__dates {
     display: flex;
     justify-content: space-between;
@@ -314,6 +312,36 @@ main {
     outline:none;
     margin-top: 20px;
 }
+
+
+.form__input__traslado {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.form__input__traslado div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__dates__traslado {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form__dates__traslado div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 42.5%;
+}
+
+.form__dates__traslado div:nth-child(3){
+    width: 100%;
+}
+
 
 /*PROMOCIONES*/
 
@@ -734,25 +762,29 @@ main {
     header {
         display: flex;
         width: 85%;
-        padding: 3vh 0 6vh 0;
+        height: 28vh;
         flex-wrap: wrap;
         justify-content: flex-end;
+        padding-top: 1vh;
     }
 
     /*LOGO*/
 
     .header__logo {
         height: 127%;
-        width: 28%;
-        padding-left: 3%;
+        width: 20%;
+        padding: 0px;
+        margin-left: 3%;
     }
     .header__logo img {
         width: 100%;
     }
+    
     #slogan {
         display: block;
         font-size: 1.1em;
         color: #f7f1e3;
+        padding-right: 3.3%;
     }
     .navicon{
         display: block;
@@ -775,13 +807,14 @@ main {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        width: 100%;
+        width: 74.5%;
     }
     .cta__items {
-        margin: 0% 9%;
+        margin: 0% 5.5% 0% 9%;
         display: flex;
         width: 40%;
-        justify-content: space-around;
+        justify-content: flex-end;
+        align-items: center;
     }
     .cta__items a {
         text-transform: uppercase;
@@ -792,6 +825,7 @@ main {
         background-color: #3E92CC;
         border-radius: 15px;
         transition: 0.3s;
+        margin: 0 1%;
     }
     .cta__items a:hover{
         background-color: #3e91cca6;
@@ -911,21 +945,20 @@ main {
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
-    .search__form__traslados {
-        display: flex;
-        flex-direction: row;
-        padding: 1vh 3% 3vh 3%;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
+
     .search__form input,
     .search__form select{
         margin-top: 2vh;
         padding: 1vh 0vh;
         font-size: 0.8em;
-        width: 20%;
+        width: 16%;
         text-align: center;
     }
+
+    .form__dates__traslado label {
+        margin-top: 10px;
+    }
+
     .search__form__traslados input,
     .search__form__traslados select{
         margin-top: 2vh;
@@ -937,8 +970,15 @@ main {
     .search__form__traslados label {
         margin-top: 20px;
         color: var(--dt-searchinput);
-        width: 50%;
+        width: 30%;
+        text-align: center;
     }
+
+    input.form__dates__input {
+       margin-left: 13%;
+       width: 40%;
+    }
+
     .section__title:nth-child(3){
         display: block;
         width: 100%;
@@ -950,35 +990,70 @@ main {
         display: flex;
         width: 100%;
         flex-direction: row;
+        flex-wrap: wrap;
     }
     .form__input div {
         display: flex;
-        width: 100%;
+        width: 50%;
         flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .form__dates div {
+        width: 100%;
+    }
+
+    .form__input input {
+        width: 50.5%;
+    }
+
+    .form__input__traslado {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+    .form__input__traslado div {
+        display: flex;
+        width: 50%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .form__input__traslado input {
+        width: 58%;
+        margin-left: 7%;
+    }
+    .form__dates__traslado {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
         justify-content: space-around;
     }
-    .form__input__traslados {
+    .form__dates__traslado div {
         display: flex;
-        width: 100%;
+        width: 33%;
+        flex-wrap: wrap;
+        justify-content: space-around;
         flex-direction: row;
+        align-items: flex-start;
     }
-    .form__input__traslados div {
-        display: flex;
-        width: 100%;
-        flex-direction: row;
+    .form__dates__traslado div:nth-child(3){
+        width: 33%;
     }
-    .form__input__traslados input {
-        width: 100%;
+    .form__dates__traslado input {
+        width: 37.5%;
+        margin-left: 7.5%;
     }
-    .form__input input {
-        width: 50%;
-    }
+
     .search__form label {
         margin-top: 2.5vh;
         font-size: 1.2em;
     }
     .search__form select {
         margin-top: 2vh;
+        margin-left: 8.5%;
     }
     .form__destino {
         display: flex;
@@ -1008,13 +1083,12 @@ main {
         flex-direction: row;
         width: 50%;
         justify-content: space-evenly;
+
     }
-    .form__dates input {
-        width: 25%;
+    .form__dates__traslado select {
+        margin-right: 6%;
     }
-    .form__amount {
-        width: 10%;
-    }
+
     .nav-mobile-button-outlined {
         display: none;
     }
@@ -1032,7 +1106,7 @@ main {
         justify-content: space-around;
     }
     .form__excursiones input {
-        width: 80%;
+        width: 55%;
     }
     ::placeholder {
         color: #392f5a;
@@ -1068,6 +1142,7 @@ main {
         padding: 0px;
         border-radius: 0px;
         width: 85%;
+        margin: 0px;
     }
     .promociones a {
         align-self: center;
@@ -1266,5 +1341,13 @@ main {
         padding: 0px 2%;
         margin: 3vh 0;
         background-color: white;
+    }
+
+    /**************************************************************************************/
+    /************************************PAGINA DE ERROR***********************************/
+    /**************************************************************************************/
+
+    .error__page a:hover {
+        border-bottom: 1px solid #347fc4;
     }
 }

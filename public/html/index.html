@@ -21,7 +21,13 @@
                 </a>
                 <div class="menuicon">
                     <i class="fas fa-user" id="accounticon" onclick="navDisplay(this)"></i>
-                    <a href="/carrito" id="navcart"><i class="fas fa-luggage-cart"></i></a>
+                    <a href="/carrito" id="navcart"><i class="fas fa-suitcase-rolling"></i></a>
+                    <form id="darkmode__form">
+                        <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch" value="on"
+                            onclick="document.documentElement.classList.toggle('dark-mode')">
+                        <label for="dark-mode" class="sr">Dark Mode</label>
+                        <div class="curtain"></div>
+                    </form>
                 </div>
                 <script>
                     function navDisplay(a) {
@@ -45,7 +51,13 @@
                     <div class="cta__items">
                         <a href="/login">Ingresar</a>
                         <a href="/registro">Regístrate</a>
-                        <a href="/carrito"><i class="fas fa-shopping-bag" alt="carrito de compras"></i></a>
+                        <a href="/carrito"><i class="fas fa-suitcase-rolling"></i></a>
+                        <form id="darkmode__form">
+                            <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch"
+                                value="on" onclick="document.documentElement.classList.toggle('dark-mode')">
+                            <label for="dark-mode" class="sr">Dark Mode</label>
+                            <div class="curtain"></div>
+                        </form>
                     </div>
                 </nav>
             </nav>
@@ -123,11 +135,11 @@
                         <div class="form__dates">
                             <div>
                                 <label for="desde">Desde</label>
-                                <input type="date" name="desde">
+                                <input class="form__dates__input" type="date" name="desde">
                             </div>
                             <div>
                                 <label for="hasta">Hasta</label>
-                                <input type="date" name="hasta">
+                                <input class="form__dates__input" type="date" name="hasta">
                             </div>
                         </div>
                         <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
@@ -154,11 +166,11 @@
                         <div class="form__dates">
                             <div>
                                 <label for="desde">Desde</label>
-                                <input type="date" name="desde">
+                                <input class="form__dates__input" type="date" name="desde">
                             </div>
                             <div>
                                 <label for="hasta">Hasta</label>
-                                <input type="date" name="hasta">
+                                <input class="form__dates__input" type="date" name="hasta">
                             </div>
                         </div>
                         <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
@@ -179,15 +191,29 @@
                 </div>
                 <div class="hide nav-search" id="searchTraslados">
                     <h2 class="section__title">Traslados desde y hacia tu hotel</h2>
-                    <div class="form__traslados">
-                        <form class="search__form__traslados" action="/traslados" method="GET">
-                            <div class="form__input__traslados">
+                    <form class="search__form" action="/traslados" method="GET">
+                        <div class="form__input__traslado">
+                            <div>
                                 <label for="desde">Desde</label>
                                 <input type="text" id="desde" name="desde"
                                     placeholder="Ingresá tu terminal o aeropuerto de llegada">
+                            </div>
+                            <div>
                                 <label for="hacia">Hacia</label>
                                 <input type="text" id="hacia" name="hacia"
                                     placeholder="Ingresá la dirección de tu hotel">
+                            </div>
+                        </div>
+                        <div class="form__dates__traslado">
+                            <div>
+                                <label for="llegada">Llegada</label>
+                                <input type="date" id="llegada" name="llegada">
+                            </div>
+                            <div>
+                                <label for="partida">Partida</label>
+                                <input type="date" id="partida" name="partida">
+                            </div>
+                            <div>
                                 <label for="personas">Cantidad de personas</label>
                                 <select name="personas">
                                     <option value="1">1</option>
@@ -196,19 +222,10 @@
                                     <option value="4">4</option>
                                 </select>
                             </div>
-                            <div class="form__dates">
-                                <div>
-                                    <label for="llegada">Llegada</label>
-                                    <input type="date" id="llegada" name="llegada">
-                                </div>
-                                <div>
-                                    <label for="partida">Partida</label>
-                                    <input type="date" id="partida" name="partida">
-                                </div>
-                            </div>
-                            <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
-                        </form>
-                    </div>
+                        </div>
+                        <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
+                    </form>
+                </div>
             </section>
             <section class="promociones">
                 <h2 class="section__title">Nuestras promociones</h2>
@@ -242,12 +259,7 @@
                 <p>Calle Falsa 123, Springfield</p>
             </div>
         </footer>
-        <form id="darkmode__form">
-            <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch" value="on"
-                onclick="document.documentElement.classList.toggle('dark-mode')">
-            <label for="dark-mode" class="sr">Dark Mode</label>
-            <div class="curtain"></div>
-        </form>
+
     </div>
 </body>
 

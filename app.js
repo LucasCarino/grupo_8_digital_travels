@@ -25,4 +25,4 @@ app.get('/login', function (req, res) {
 app.get('*', function (req, res) {
     res.status(400).sendFile(__dirname + '/public/html/error.html');
 })
-app.listen(3000, () => console.log('\x1b[46m%s\x1b[0m', '\x1b[30m Server Running - Host: 3000 \x1b[0m',));
+app.listen(3000, () => console.log('\x1b[46m%s\x1b[0m', '\x1b[30m Server Running | Host: 3000 \x1b[0m',));
