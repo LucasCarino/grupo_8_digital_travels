@@ -383,6 +383,13 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+.payment {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
 .payment a img {
     width: 100%;
 }
@@ -390,50 +397,10 @@ main {
     text-align: center;
 }
 
-/****************** CARRITO ******************/
-.product__cart {
-    border-radius: 3px;
-    padding: 0 10px;
-    display: flex;
-    flex-direction: column;
-}
-.product__cart article {
-    display: flex;
-}
-.cart__img {
-    flex: 0 0 30%;
-    margin-right: 4px;
-    align-self: center;
-}
-.cart__img img {
-    width: 100%;
-}
-.cart__desc {
-    display: flex;
-    flex-direction: column;
-}
-.cart__desc h3 {
-    margin: 0;
-    font-size: 14px;
-}
-.cart__desc p {
-    margin: 0;
-    font-size: 12px;
-}
-.cart__desc h4 {
-    margin: 0;
-    font-size: 13px;
-}
-.cart__semitotal {
-    display: flex;
-    align-items: center;
-    align-self: flex-end;
-}
-
 /***************************************FOOTER********************************************/
 
 footer article {
-    border-bottom: 1.5px solid rgba(26, 24, 24, 0.1);
+    border-bottom: 1.5px solid rgba(90,90,90,0.1);
     text-align: center;
     padding: 20px;
 }
@@ -536,12 +503,12 @@ footer a {
     color: var(--dt-titles);
 }
 .productimg__div {
-    display: flex;
     margin: 5px;
 }
 .productimg__div img {
     width: 100%;
     border: 2px solid var(--dt-searchbackground);
+    box-sizing: border-box;
 }
 .article__price {
     display: flex;
@@ -636,7 +603,7 @@ main {
 .register__form input:focus {
     border-width: 0 0 2px;
     border-color: var(--dt-blue);
-    color: var(--dt-blue);
+    color: black;
 }
 .register__form input:valid {
     color: black;
@@ -726,6 +693,105 @@ main {
 .cta__items {
     display: none;
 }
+
+    /**************************************************************************************/
+    /**********************************CARRITO DE COMPRAS**********************************/
+    /**************************************************************************************/
+
+    /****************************************MAIN******************************************/
+    
+    .productcart__main h2 {
+        color: #24252a;
+    }
+
+    .product__cart {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        background-color:#7ed6df;
+        margin: 10px;
+    }
+
+    .product__cart article {
+        display: flex;
+        border-top: 1px solid #7ed6df;
+        border-left: 1px solid #7ed6df;
+        border-right: 1px solid #7ed6df;
+        background-color: #f7f1e3;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    
+    .product__cart h3 {
+        align-self: flex-end;
+        text-transform: uppercase;
+        margin-right: 3px;
+    }
+    .cart__img {
+        flex: 0 0 45%;
+        border: 1px solid wheat;
+        box-sizing: border-box;
+        align-self: center;
+    }
+    .cart__img img {
+        width: 100%;
+        display: flex;
+    }
+    .cart__desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 10px;
+    }
+    .cart__desc h3 {
+        margin: 0;
+        font-size: 14px;
+        text-align: center;
+        border-bottom: 1px solid #7ed6df;
+        align-self: center;
+        width: 100%;
+        margin-left: 5px;
+    }
+    .cart__desc p {
+        margin: 0;
+        font-size: 12px;
+        padding-left: 5px;
+    }
+    .cart__desc h4{
+        margin: 0;
+        font-size: 13px;
+        text-align: center;
+        background-color: #7ed6df;
+        color: #24252a;
+        padding: 3px 0;
+    }    
+    
+    .cart__semitotal {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .cart__semitotal h4{
+        text-align: center;
+        background-color: yellow;
+        text-transform: uppercase;
+        align-self: center;
+        padding: 0.5vh 3%;
+        width: 100%;
+        margin-top: 6px;
+    }
+    .cart__semitotal i {
+        align-self: center;
+        font-size: 1.3em;
+    }
+    .cart__semitotal select {
+        width: 40%;
+        border-radius: 5px;
+        padding: 0.5vh 0;
+    }
+
 /*****************************************************************************************/
 /************************************PAGINA DE ERROR**************************************/
 /*****************************************************************************************/
@@ -865,7 +931,7 @@ main {
         font-size: 110%;
         color: #f7f1e3;
         background-color: #3E92CC;
-        border-radius: 15px;
+        border-radius: 6px;
         transition: 0.3s;
         margin: 0 1%;
     }
@@ -1195,7 +1261,7 @@ main {
     }
 
     /*FINANCIACIÓN*/
-
+    
     .payment {
         display: flex;
         width: 85%;
@@ -1203,19 +1269,25 @@ main {
         transition: 0.3s;
         padding: 15px;
     }
+    .payment a {
+        width: 20%;
+    }
+
     .payment img {
         height: 30vh;
         width: 15vw;
         border-radius: 5px;
         object-fit: contain;
-        transition: 0.3s;
         background-color: #f7f1e3;
-        margin: 5px;
-        box-sizing: border-box;
-        padding: 20px;
+        margin: 10px;
+        padding: 20px 0px;
     }
+
     .payment img:hover {
         transform: scale(1.05);
+    }
+    .payment a img {
+        padding: 10px;
     }
 
     /***************************************FOOTER*******************************************/
@@ -1360,6 +1432,8 @@ main {
     /******************************FORMULARIO DE REGISTRO**********************************/
     /**************************************************************************************/
 
+    /****************************************MAIN******************************************/
+
     .login__main {
         display: flex;
         flex-direction: column;
@@ -1382,10 +1456,42 @@ main {
         background-color: white;
     }
 
+
+    /**************************************************************************************/
+    /***********************************CARRITO DE COMPRAS*********************************/
+    /**************************************************************************************/
+
+    /****************************************MAIN******************************************/
+
+    .productcart__main {
+        width: 85%;
+    }
+
+    .product__cart {
+        margin: 0px;
+    }
+
+    .cart__desc h3 {
+        font-size: 1.1em;
+    }
+    .cart__desc h4 {
+        font-size: 1em;
+        margin-top: 4.5vh;
+    }
+
+    .cart__desc p {
+        font-size: 14px;
+    }
+    .product__cart .search__button {
+        align-self: end;
+    }
+
     /**************************************************************************************/
     /************************************PAGINA DE ERROR***********************************/
     /**************************************************************************************/
 
+    /****************************************MAIN******************************************/
+    
     .error__page a:hover {
         border-bottom: 1px solid #347fc4;
     }
