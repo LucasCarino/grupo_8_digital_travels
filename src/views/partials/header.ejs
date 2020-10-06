@@ -1,0 +1,97 @@
+<header>
+    <nav class="navbar">
+        <a class="header__logo" href="/">
+            <img src="/img/logo-dtva.svg" alt="logo" class="navicon">
+            <img src="/img/digital-travels.svg" alt="digital travels" id="logo-title">
+        </a>
+        <div class="menuicon">
+            <i class="fas fa-user" id="accounticon" onclick="navDisplay(this)"></i>
+            <a href="/users/carrito" id="navcart"><i class="fas fa-suitcase-rolling"></i></a>
+            <form id="darkmode__form">
+                <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch" value="on"
+                    onclick="document.documentElement.classList.toggle('dark-mode')">
+            </form>
+        </div>
+        <script>
+            function navDisplay(a) {
+                a.classList.toggle("change");
+                var x = document.getElementById("nav-menu-mobile");
+                if (x.style.display === "flex") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "flex";
+                }
+                var y = document.getElementById("categories");
+                if (y.style.display === "none") {
+                    y.style.display = "flex";
+                } else {
+                    y.style.display = "none";
+                }
+            }
+        </script>
+        <nav class="nav__cta">
+            <p id="slogan">Te acompañamos desde el primer paso.</p>
+            <div class="cta__items">
+                <a href="/users/login">Ingresar</a>
+                <a href="/users/register">Regístrate</a>
+                <a href="/users/carrito"><i class="fas fa-suitcase-rolling"></i></a>
+                <form id="darkmode__form">
+                    <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch" value="on"
+                        onclick="document.documentElement.classList.toggle('dark-mode')">
+                    <label for="dark-mode" class="sr">Dark Mode</label>
+                    <div class="curtain"></div>
+                </form>
+            </div>
+        </nav>
+    </nav>
+    <div id="categories">
+        <div class="change category" onclick="searchBar(this, getElementById('searchPaquetes'))">
+            <i class="fas fa-suitcase fa-fw"></i>
+            <h3>Paquetes</h3>
+        </div>
+        <div class="category" onclick="searchBar(this, getElementById('searchAlojamientos'))">
+            <i class="fas fa-hotel fa-fw"></i>
+            <h3>Alojamientos</h3>
+        </div>
+        <div class="category" onclick="searchBar(this, getElementById('searchExcursiones'))">
+            <i class="fas fa-mountain fa-fw"></i>
+            <h3>Excursiones</h3>
+        </div>
+        <div class="category" onclick="searchBar(this, getElementById('searchTraslados'))">
+            <i class="fas fa-shuttle-van fa-fw"></i>
+            <h3>Traslados</h3>
+        </div>
+        <script>
+            function searchBar(x, name) {
+                icons = document.getElementsByClassName("category");
+                for (let i = 0; i < icons.length; i++) {
+                    icons[i].classList.toggle("change", false);
+                }
+                x.classList.toggle("change");
+                search = document.getElementsByClassName("nav-search");
+                for (let i = 0; i < search.length; i++) {
+                    search[i].classList.toggle("hide", true);
+                }
+                name.classList.toggle("hide");
+            }
+        </script>
+    </div>
+    <div id="nav-menu-mobile">
+        <div class="nav-header-user-menu">
+            <div class="nav-header-mobile-user-info">
+                <div class="nav-user-icon"><i class="far fa-user"></i></div>
+                <div class="nav-mobile-user-welcome">
+                    <h3 class="nav-mobile-user-title">Bienvenido</h3>
+                    <p class="nav-mobile-user-text">Ingresá a tu cuenta para gestionar tu próximo viaje</p>
+                </div>
+            </div>
+            <div class="nav-mobile-user-buttons">
+                <a class="nav-mobile-button-filled" href="/users/login">Ingresá</a>
+                <a class="nav-mobile-button-outlined" href="/users/register">Creá tu cuenta</a>
+            </div>
+        </div>
+        <div class="nav-menu-section">
+            <a href="/help"><i class="far fa-question-circle"></i>Ayuda</a>
+        </div>
+    </div>
+</header>

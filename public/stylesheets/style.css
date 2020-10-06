@@ -10,7 +10,6 @@
 
 *{
     font-family: 'Helvetica', sans-serif;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
     transition: 0.5s;
 }
 
@@ -392,10 +391,15 @@ main {
 
 /***************************************FOOTER********************************************/
 
+
 footer article {
     border-bottom: 1px solid var(--dt-borders);
     text-align: center;
     padding: 20px;
+    background-color: var(--dt-white);
+}
+
+.social__icons {
     background-color: var(--dt-background);
 }
 footer article h3 {
@@ -421,7 +425,6 @@ footer a {
 .newsletter__input {
     border: 1px solid var(--dt-borders);
     border-radius: 5px;
-
     width: 75%;
     padding: 1vh 0;
 }
@@ -774,12 +777,13 @@ text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 25vh
+    margin: 20vh;
 }
 .search-error {
     width:  80px;
     margin-left: auto;
     margin-right: auto;
+    color: var(--dt-blacktext);
 }
 .error__page a {
     color: var(--dt-decoration1);
@@ -836,8 +840,6 @@ text-align: center;
         padding: 0;
     }
     .container {
-        display: flex;
-        flex-direction: column;
         align-items: center;
     }
 
@@ -875,7 +877,6 @@ text-align: center;
         font-style: italic;
     }
     .navicon{
-        display: block;
         height: 100%;
     }
     #logo-title {
@@ -886,7 +887,6 @@ text-align: center;
 
     .nav__cta {
         display: flex;
-        justify-content: flex-end;
         align-items: center;
         width: 74.5%;
     }
@@ -915,7 +915,6 @@ text-align: center;
     .cta__items a:nth-child(1):hover{
         background-color: var(--dt-decoration1);
     }
-
     .cta__items a:nth-child(2){
         color: var(--dt-blacktext); 
         background-color: var(--dt-decoration2);
@@ -934,20 +933,14 @@ text-align: center;
         font-size: 1.4em;
         color: var(--dt-whitetext);
     }
-
-
     .navbar{
         display: flex;
         height: 20vh;
-        border-bottom: none;
     }
 
     /*CATEGORIAS*/ 
 
     #categories {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
         width: 77%;
         text-transform: uppercase;
     }
@@ -1254,6 +1247,10 @@ text-align: center;
         flex-wrap: wrap;
     }
 
+    footer article {
+        border-bottom: none;
+    }
+
     /*NEWSLETTER*/
 
     .newsletter__container {
@@ -1288,7 +1285,11 @@ text-align: center;
         text-align: center;
         margin-left: 5%;
         font-size: 110%;
+        cursor: pointer;
+    }
 
+    .newsletter__button:hover {
+        background-color: var(--dt-decoration1);
     }
 
     /***********************************REDES SOCIALES*************************************/
@@ -1314,6 +1315,11 @@ text-align: center;
     }
     .copyright {
         padding: 5vh 5%;
+        width: 100%;
+        text-align: end;
+        border-top: 1px solid var(--dt-borders);
+        border-left: 1px solid var(--dt-borders);
+        border-right: 1px solid var(--dt-borders);
     }
 
     /**************************************************************************************/

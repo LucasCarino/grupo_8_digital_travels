@@ -1,0 +1,112 @@
+<section class="search__bar">
+    <div class="nav-search" id="searchPaquetes">
+        <h2 class="section__title">Descubre tu próximo viaje</h2>
+        <form class="search__form" action="/paquetes" method="GET">
+            <div class="form__input">
+                <div>
+                    <label for="destino">Destino</label>
+                    <input type="text" id="destino" name="destino" placeholder="Ingresá hacia dónde viajás">
+                </div>
+                <div>
+                    <label for="personas">Cantidad de personas</label>
+                    <select name="personas">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form__dates">
+                <div>
+                    <label for="desde">Desde</label>
+                    <input class="form__dates__input" type="date" name="desde">
+                </div>
+                <div>
+                    <label for="hasta">Hasta</label>
+                    <input class="form__dates__input" type="date" name="hasta">
+                </div>
+            </div>
+            <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
+        </form>
+    </div>
+    <div class="hide nav-search" id="searchAlojamientos">
+        <h2 class="section__title">Encuentra tu hotel ideal</h2>
+        <form class="search__form" action="/paquetes" method="GET">
+            <div class="form__input">
+                <div>
+                    <label for="destino">Destino</label>
+                    <input type="text" id="destino" name="destino" placeholder="Ingresá hacia dónde viajás">
+                </div>
+                <div>
+                    <label for="personas">Cantidad de personas</label>
+                    <select name="personas">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form__dates">
+                <div>
+                    <label for="desde">Desde</label>
+                    <input class="form__dates__input" type="date" name="desde">
+                </div>
+                <div>
+                    <label for="hasta">Hasta</label>
+                    <input class="form__dates__input" type="date" name="hasta">
+                </div>
+            </div>
+            <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
+        </form>
+    </div>
+    <div class="hide nav-search" id="searchExcursiones">
+        <h2 class="section__title">Actividades para tu viaje</h2>
+        <div class="form__excursiones">
+            <form class="search__form" action="/excursiones" method="GET">
+                <div class="form__input">
+                    <label for="destino">Destino</label>
+                    <input type="text" id="destino" name="destino" placeholder="Ingresá el destino al que viajás">
+                </div>
+                <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="hide nav-search" id="searchTraslados">
+        <h2 class="section__title">Traslados desde y hacia tu hotel</h2>
+        <form class="search__form" action="/traslados" method="GET">
+            <div class="form__input__traslado">
+                <div>
+                    <label for="desde">Desde</label>
+                    <input type="text" id="desde" name="desde"
+                        placeholder="Ingresá tu terminal o aeropuerto de llegada">
+                </div>
+                <div>
+                    <label for="hacia">Hacia</label>
+                    <input type="text" id="hacia" name="hacia" placeholder="Ingresá la dirección de tu hotel">
+                </div>
+            </div>
+            <div class="form__dates__traslado">
+                <div>
+                    <label for="llegada">Llegada</label>
+                    <input type="date" id="llegada" name="llegada">
+                </div>
+                <div>
+                    <label for="partida">Partida</label>
+                    <input type="date" id="partida" name="partida">
+                </div>
+                <div>
+                    <label for="personas">Cantidad de personas</label>
+                    <select name="personas">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+            <button class="search__button" type="submit">buscar <i class="fas fa-search"></i></button>
+        </form>
+    </div>
+</section>
