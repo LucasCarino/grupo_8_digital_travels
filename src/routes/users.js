@@ -1,16 +1,12 @@
 var express = require('express');
 var router = express.Router();
-
+const validation = require('../middlewares/validation')
+const usersController = require('../controllers/usersController');
 /* GET users listing. */
 
-router.get('/carrito', function (req, res, next) {
-  res.render('users/productCart', { title: 'Mis Viajes' });
-});
-router.get('/login', function (req, res, next) {
-  res.render('users/login', { title: 'Ingreso' });
-});
-router.get('/register', function (req, res, next) {
-  res.render('users/register', { title: 'Registrate' });
-});
+router.get('/carrito', usersController.cart);
+router.get('/login', usersController.login);
+router.get('/register', usersController.register);
+router.post('/register', validation.register, usersController.registerSend);
 
 module.exports = router;

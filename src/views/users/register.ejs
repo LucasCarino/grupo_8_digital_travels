@@ -8,7 +8,12 @@
         <%- include('../partials/header__min') %>
         <main class="register__main">
             <h1 class="user-form-title">Completá tus datos</h1>
-            <form class="register__form" action="/" method="POST">
+            <form class="register__form" action="/users/register" method="POST">
+                <% if (typeof errors != "undefined") { %>
+                    <% errors.forEach(error => { %>
+                     <p style="color: red;"><%= error.msg %> </p>
+                    <% }) %>
+                <% } %>
                 <div>
                     <input type="text" name="nombre" id="nombre" required placeholder=" ">
                     <label for="nombre" id="nombre-label">Nombre</label>
