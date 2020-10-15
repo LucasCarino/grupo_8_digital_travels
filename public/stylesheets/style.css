@@ -701,6 +701,21 @@ text-align: center;
     top: -60px;
     font-size: 12px; 
 }
+.register__form textarea {
+    width: 100%;
+    height: 120px;
+    resize: none;
+    margin-bottom: 10px;
+    border: 2px solid rgba(0,0,0,.2);
+    box-shadow: none;
+    outline: none;
+}
+.register__form textarea:focus {
+    border-color: var(--dt-decoration1);
+}
+#textarea-label {
+    top: 0px;
+}
 .submit-button {
     background-color: var(--dt-decoration1);
     color: var(--dt-white);
