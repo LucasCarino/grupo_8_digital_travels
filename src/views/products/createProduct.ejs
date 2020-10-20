@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('../partials/head') %>
+
 <body>
     <div class="container">
-        <%- include('../partials/header__min') %> 
+        <%- include('../partials/header__min') %>
         <main class="register__main">
-            <h1 class="user-form-title">Publicá tu producto</h1>
+            <h1 class="user-form-title">Publicá tu viaje</h1>
             <form class="register__form" action="/products/create" method="POST" enctype="multipart/form-data">
                 <div>
-                    <input type="text" name="name" id="name" required placeholder=" ">     
-                    <label for="name">Nombre del producto</label>      
-                </div>   
+                    <input type="text" name="name" id="name" required placeholder=" ">
+                    <label for="name">Nombre del paquete turístico</label>
+                </div>
                 <div>
                     <input type="number" id="price" name="price" required placeholder=" ">
                     <label for="price">Precio</label>
@@ -23,11 +24,12 @@
                     <input type="file" id="image" name="image" required>
                     <label for="image">Imagen</label>
                 </div>
-        
+
                 <button type="submit" class="submit-button">Publicar</button>
             </form>
         </main>
         <%- include('../partials/footer__min2') %>
     </div>
 </body>
+
 </html>
