@@ -1,0 +1,20 @@
+[
+ {
+  "nombre": "Santiago",
+  "apellido": "Aranda",
+  "username": "sanarana",
+  "email": "santiagoaranda@gmail.com",
+  "nacimiento": "1971-07-03",
+  "domicilio": "Arroyito 14",
+  "password": "$2a$10$a8GZpY4q5SU6J4cKw7Vp6O/6Wu9sDo5ZfjSDy3ugtqv54KSHgUDCu"
+ },
+ {
+  "nombre": "Lucas",
+  "apellido": "Carino",
+  "username": "lucascarino",
+  "email": "lucas@lucas.com",
+  "nacimiento": "2020-10-20",
+  "domicilio": "calle",
+  "password": "$2a$10$NpF62LRWmlJy/yKp4vHKFeSZwfAX/QOhtXO1hdDLgrvi8eT1YmUPu"
+ }
+]

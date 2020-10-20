@@ -1,8 +1,9 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
+var cookie = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session'); // para usar session y cookies
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -17,8 +18,13 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookie());
 app.use(express.static(path.join(__dirname, '../public')));
+app.use(session({ // para usar session, secret identifica la pagina mia
+  secret: 'Digital Travels',
+  resave: true,
+  saveUninitialized: true
+})); 
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
