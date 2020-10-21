@@ -16,5 +16,14 @@
   "nacimiento": "2020-10-20",
   "domicilio": "calle",
   "password": "$2a$10$NpF62LRWmlJy/yKp4vHKFeSZwfAX/QOhtXO1hdDLgrvi8eT1YmUPu"
+ },
+ {
+  "nombre": "Lucas",
+  "apellido": "Carino",
+  "username": "Lucas Carino",
+  "email": "lucascarino2@gmail.com",
+  "nacimiento": "2020-10-22",
+  "domicilio": "calle falsa",
+  "password": "$2a$10$RSPWnbWA/aAdOb8orS8EOe98ucLc6.X2O240aF177DcuAQyR5L4sS"
  }
 ]

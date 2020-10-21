@@ -1005,12 +1005,21 @@ text-align: center;
     .cta__items a:nth-child(2):hover{
         background-color: var(--dt-decoration1);
     }
-
     .cta__items a:nth-child(3){
+        color: var(--dt-blacktext); 
+        background-color: var(--dt-decoration2);
+        border-bottom: 2px solid black;
+
+    }
+    .cta__items a:nth-child(3):hover{
+        background-color: var(--dt-decoration1);
+    }
+
+    .cta__items a:nth-child(4){
         font-size: 1.4em;
         color: var(--dt-whitetext);
     }
-    .cta__items a:nth-child(3){
+    .cta__items a:nth-child(4){
         font-size: 1.4em;
         color: var(--dt-whitetext);
     }
