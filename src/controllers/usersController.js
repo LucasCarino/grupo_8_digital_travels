@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs'); // para encriptar pass
 const leerJson = () => { // es una funcion que nos da nos usuarios de la BD
     let jsonUsers = fs.readFileSync(path.resolve(__dirname + "/../data/usersDB.json")); // path resolve pone todas las barras para el mismo lado sino daba error por barras para un lado y para el otro
     return JSON.parse(jsonUsers); // para tener el array de objetos y no el json
-    };
+};
 
 module.exports = {
     cart: function(req, res, next){
@@ -39,6 +39,11 @@ module.exports = {
         }                                                                           // maxAge esta en milisegundos, para que dure cinco minutos es 5*60*1000, no se borra al reiniciar sino al borrar cookies a mano
 
         res.redirect('/');
+    },
+    logout: (req, res) => {
+        req.session.destroy(); // cierro la sesion
+        res.clearCookie('recordame'); // mato cookie
+        res.redirect('/')
     },
 
     register: function (req, res, next) {
