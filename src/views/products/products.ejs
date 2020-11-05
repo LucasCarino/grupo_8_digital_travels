@@ -11,66 +11,24 @@
                 Nuestros paquetes turísticos
             </h2>
             <section class="product__detail">
-                <article class="product__article">
-                    <h3>Paquete turístico</h3>
-                    <div class="productimg__div">
-                        <img src="img/promo1.jpg" alt="destino">
-                    </div>
-                    <div class="product__desc">
-                        <p>Lorem ipsum dolor sit amet lias, numquam sunt velit explicabo quos accusamus facilis
-                            blanditiis dolor dolore, provident id nam. Quae, debitis.</p>
-                        <h4>$ XXXXX por persona</h4>
-                        <div class="cart__semitotal">
-                            <a href="/products/detail"><button>Ver más</button></a>
-                            <a href="/products/edit/1"><button>Editar</button></a>
+                <% products.forEach(product => { %>                 
+                    <article class="product__article">
+                        <h3><%= product.name %></h3>
+                        <div class="productimg__div">
+                            <img src="img/promo1.jpg" alt="destino">
                         </div>
-                    </div>
-                </article>
-                <article class="product__article">
-                    <h3>Paquete turístico</h3>
-                    <div class="productimg__div">
-                        <img src="img/promo1.jpg" alt="destino">
-                    </div>
-                    <div class="product__desc">
-                        <p>Lorem ipsum dolor sit amet lias, numquam sunt velit explicabo quos accusamus facilis
-                            blanditiis dolor dolore, provident id nam. Quae, debitis.</p>
-                        <h4>$ XXXXX por persona</h4>
-                        <div class="cart__semitotal">
-                            <a href="/products/detail"><button>Ver más</button></a>
-                            <a href="/products/edit/1"><button>Editar</button></a>
+                        <div class="product__desc">
+                            <p><%= product.description %></p>
+                            <h4>$ <%= product.price %> por persona</h4>
+                            <div class="cart__semitotal">
+                                <a href="/products/<%= product.id %>"><button>Ver más</button></a>
+                                <a href="/products/edit/<%= product.id %>"><button>Editar</button></a>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <article class="product__article">
-                    <h3>Paquete turístico</h3>
-                    <div class="productimg__div">
-                        <img src="img/promo1.jpg" alt="destino">
-                    </div>
-                    <div class="product__desc">
-                        <p>Lorem ipsum dolor sit amet lias, numquam sunt velit explicabo quos accusamus facilis
-                            blanditiis dolor dolore, provident id nam. Quae, debitis.</p>
-                        <h4>$ XXXXX por persona</h4>
-                        <div class="cart__semitotal">
-                            <a href="/products/detail"><button>Ver más</button></a>
-                            <a href="/products/edit/1"><button>Editar</button></a>
-                        </div>
-                    </div>
-                </article>
-                <article class="product__article">
-                    <h3>Paquete turístico</h3>
-                    <div class="productimg__div">
-                        <img src="img/promo1.jpg" alt="destino">
-                    </div>
-                    <div class="product__desc">
-                        <p>Lorem ipsum dolor sit amet lias, numquam sunt velit explicabo quos accusamus facilis
-                            blanditiis dolor dolore, provident id nam. Quae, debitis.</p>
-                        <h4>$ XXXXX por persona</h4>
-                        <div class="cart__semitotal">
-                            <a href="/products/detail"><button>Ver más</button></a>
-                            <a href="/products/edit/1"><button>Editar</button></a>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                <% }) %>
+
+
                 <a href="/products/create"><button class="createProduct__button">Crear
                         nuevo paquete turístico</button></a>
             </section>

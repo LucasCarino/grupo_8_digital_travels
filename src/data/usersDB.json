@@ -25,5 +25,14 @@
   "nacimiento": "2020-10-20",
   "domicilio": "calle falsa 123",
   "password": "$2a$10$jogemFOjppg558xK.Hzh0.IZmM4HZB7oc/CAAsoY./KuyTfMJ65ja"
+ },
+ {
+  "nombre": "Santiago",
+  "apellido": "Perone",
+  "username": "santiperone",
+  "email": "sdperone97@gmail.com",
+  "nacimiento": "1997-02-02",
+  "domicilio": "Los Cerezos 1368",
+  "password": "$2a$10$d.x8/Rv.FWL7m.EcZxuHe.qmLXkm0xz6W6VjtGPF88Q.kTA9gpbEu"
  }
 ]
