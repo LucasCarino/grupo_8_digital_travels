@@ -1,23 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
 
-function toThousand(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-};
-const productsPath = path.join(__dirname, '../data/productsDB.json');
-function readProducts() {
-    let products = JSON.parse(fs.readFileSync(productsPath));
-    products.forEach(prod => {
-        prod.pricewd = Math.round(prod.price * (1 - prod.discount / 100));
-        prod.price = toThousand(prod.price);            
-        prod.pricewd = toThousand(prod.pricewd);     
-    });
-    return products;
-}
+const productsFilePath = path.join(__dirname, '../data/productsDB.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 module.exports = {
-    all: function(req, res, next) {
-        let products = readProducts();
+    all: (req, res, next) => {
         res.render('products/products', { title: 'Productos', products: products });
     },
     detail: function (req, res) {
@@ -28,29 +17,27 @@ module.exports = {
     createForm: function (req, res) {
         res.render('products/createProduct', { title: 'Vender' });
     },
-    create: function(req, res) {
-        let products = JSON.parse(fs.readFileSync(productsPath));
-        let newProduct = {
-            id: products.slice(-1)[0].id + 1,
+    create: (req, res) => {
+        newProduct = {
+            id: products[products.length - 1].id + 1,
             ...req.body,
-            category: "in-sale"
+            image: req.file.filename
         }
-        products.push(newProduct);
-        let productsJson = JSON.stringify(products, null, 2);
-        fs.writeFileSync(productsPath, productsJson);
-        res.redirect('/products');
+        let newDB = JSON.stringify([...products, newProduct], null, 2);
+        fs.writeFileSync(productsFilePath, newDB);
+        res.redirect('/');
     },
-    editForm: function(req, res) {
+    editForm: function (req, res) {
         let products = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/productsDataBase.json')));
         product = products.filter(prod => prod.id == req.params.id)[0];
         res.render('editProduct', { product });
     },
-    edit: function(req, res) {
+    edit: function (req, res) {
         let products = JSON.parse(fs.readFileSync(productsPath));
         let product = products.filter(prod => prod.id == req.params.id)[0];
         let index = products.indexOf(product);
         let editProduct = {}
-        if(typeof req.body.image === 'undefined') {
+        if (typeof req.body.image === 'undefined') {
             editProduct = {
                 id: product.id,
                 ...req.body,
@@ -63,8 +50,8 @@ module.exports = {
                 ...req.body,
                 category: product.category
             }
-            fs.unlink(path.join(__dirname, '../../public/img/products', product.image), (err) =>{
-                if(err) {
+            fs.unlink(path.join(__dirname, '../../public/img/products', product.image), (err) => {
+                if (err) {
                     console.error(err);
                     return
                 }
@@ -75,7 +62,7 @@ module.exports = {
         fs.writeFileSync(productsPath, productsJson);
         res.redirect('/products/' + product.id);
     },
-    delete: function(req, res) {
+    delete: function (req, res) {
         let products = JSON.parse(fs.readFileSync(productsPath));
         products = products.filter(prod => prod.id != req.params.id);
         console.log(products.length);
