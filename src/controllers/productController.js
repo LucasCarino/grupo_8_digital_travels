@@ -28,9 +28,9 @@ module.exports = {
         fs.writeFileSync(productsFilePath, productsJson);
         res.redirect('/products');
     },
-    editForm: function (req, res) {
-        let product = products.filter(prod => prod.id == req.params.id)[0];
-        res.render('products/editProduct', { title: 'Editar', product: product });
+    editForm: (req, res, next) => {
+        let product = products.find((product) => product.id == req.params.id);
+        res.render('products/editProduct', { product: product })
     },
     edit: function (req, res) {
         let product = products.find(prod => prod.id == req.params.id);
