@@ -24,6 +24,5 @@ router.post('/create', upload.single('image'), controller.create);
 router.get('/edit/:id', controller.editForm);
 router.post('/edit/:id', upload.single('image'), controller.edit);
 router.post('/delete/:id', controller.delete);
-router.get('/:id', controller.detail);
 
 module.exports = router;
