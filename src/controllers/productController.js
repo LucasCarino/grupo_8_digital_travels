@@ -62,7 +62,7 @@ module.exports = {
     delete: function (req, res) {
         let productsNew = products.filter(prod => prod.id != req.params.id);
         let productsJson = JSON.stringify(productsNew, null, 2);
-        fs.writeFileSync(productsPath, productsJson);
+        fs.writeFileSync(productsFilePath, productsJson);
         res.redirect('/products');
     },
 }
