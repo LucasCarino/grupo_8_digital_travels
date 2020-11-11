@@ -9,12 +9,12 @@ module.exports = {
     all: (req, res, next) => {
         res.render('products/products', { title: 'Productos', products: products });
     },
-    detail: function (req, res) {
-        let products = readProducts();
-        let product = products.filter(prod => prod.id == req.params.id)[0];
-        res.render('product-detail', { product });
+    detail: (req, res, next) => {
+        idProducto = req.params.id;
+        let product = products.find((producto) => producto.id == req.params.id);
+        res.render('products/productDetail', { title: product.name, product: product })
     },
-    createForm: function (req, res) {
+    createForm: (req, res) => {
         res.render('products/createProduct', { title: 'Vender' });
     },
     create: (req, res) => {

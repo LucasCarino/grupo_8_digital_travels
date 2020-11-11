@@ -9,20 +9,19 @@
         <main>
             <%- include('../partials/search__bar') %>
             <section class="productdetail__section">
-                <h2 class="section__title">Producto</h2>
+                <h2 class="section__title"><%= product.name %></h2>
                 <article class="productdetail__article">
                     <div class="detail__img">
-                        <img src="../img/promo1.jpg" alt="destino">
+                        <img src="/img/promo2.jpg" alt="destino">
                     </div>
                     <div class="productdetail__desc">
-                        <p>Lorem ipsum dolor sit amet lias, numquam sunt velit explicabo quos accusamus facilis
-                            blanditiis dolor dolore, provident id nam. Quae, debitis.</p>
+                        <p><%= product.description %></p>
                         <ul>
-                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+                            <li>Hotel: <%= product.hotel %></li>
+                            <li>Incluye: <%= product.includes %></li>
+                            <li>Noches: <%= product.nights %></li>
                         </ul>
-                        <h4>$ XXXXX por persona</h4>
+                        <h4>$<%= product.price %> por persona</h4>
                         <div class="cart__semitotal">
                             <i class="fas fa-user"></i>
                             <select name="personas">
@@ -31,9 +30,9 @@
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                             </select>
-                            <h4>Total $ XXXXX</h4>
                         </div>
-                        <a href="/products/detail"><button class="addtocart__button">Añadir a Mis Viajes</button></a>
+                        <button>Añadir a Mis Viajes</button>
+                        <button>Borrar</button>
                     </div>
                 </article>
                 <a href="/products">Volver al listado</a>

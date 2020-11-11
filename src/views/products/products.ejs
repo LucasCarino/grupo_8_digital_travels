@@ -12,20 +12,18 @@
             </h2>
             <section class="product__detail">
                 <% products.forEach(product => { %>
-                <article class="product__article">
-                    <h3><%= product.name %></h3>
-                    <div class="productimg__div">
-                        <img src="img/promo1.jpg" alt="destino">
-                    </div>
-                    <div class="product__desc">
-                        <p><%= product.description %></p>
-                        <h4>$ <%= product.price %> por persona</h4>
-                        <div class="cart__semitotal">
-                            <a href="/products/<%= product.id %>"><button>Ver más</button></a>
-                            <a href="/products/edit/<%= product.id %>"><button>Editar</button></a>
+                <a href="/products/detail/<%= product.id %>">
+                    <article class="product__article">
+                        <h3><%= product.name %></h3>
+                        <div class="productimg__div">
+                            <img src="img/promo1.jpg" alt="destino">
                         </div>
-                    </div>
-                </article>
+                        <div class="product__desc">
+                            <p><%= product.description %></p>
+                            <h4>$ <%= product.price %> por persona</h4>
+                        </div>
+                    </article>
+                </a>
                 <% }) %>
 
 
