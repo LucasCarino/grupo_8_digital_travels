@@ -1,19 +1,13 @@
 [
   {
-    "id": "1",
-    "name": "3 noches en PUERTO IGUAZU",
-    "category": "paquete",
-    "destination": "misiones",
-    "hotel": "altos del iguazu hotel",
-    "description": "Nueva opción de alojamiento en la tierra de una de las Maravillas del Mundo, nuestro destino de Puerto Iguazú. Hotel Altos del Iguazú es una empresa familiar creada con la finalidad de brindar un servicio personalizado hacia los huéspedes y de esta manera poder finalizar la experiencia con una sonrisa. Al estar cerca de los puntos de referencia más conocidos de Puerto Iguazú, como Plaza San Martín (0,4 km) y Catedral Virgen del Carmen (0,9 km), Altos del Iguazu es un magnífico destino para turistas.",
-    "includes": "Aéreos Buenos Aires/Iguazú/Buenos Aires. Un equipaje de mano de hasta 10kg. Traslados de llegada y de salida. Excursión Cataratas Argentinas. 20% de descuento en restaurant Las Misión. Alojamiento según régimen seleccionado. Asistencia al viajero.",
-    "nights": "3",
-    "transfer": "true",
+    "id": 1,
+    "name": "PUERTO IGUAZU",
     "price": "11000",
+    "description": "Nueva opción de alojamiento en la tierra de una de las Maravillas del Mundo, nuestro destino de Puerto Iguazú. Hotel Altos del Iguazú es una empresa familiar creada con la finalidad de brindar un servicio personalizado hacia los huéspedes y de esta manera poder finalizar la experiencia con una sonrisa. Al estar cerca de los puntos de referencia más conocidos de Puerto Iguazú, como Plaza San Martín (0,4 km) y Catedral Virgen del Carmen (0,9 km), Altos del Iguazu es un magnífico destino para turistas.",
     "image": "?"
   },
   {
-    "id": "2",
+    "id": 2,
     "name": "VERANO 2021 - ESPECIAL NOA - SALTA",
     "category": "paquete",
     "destination": "salta",
@@ -26,20 +20,14 @@
     "image": "?"
   },
   {
-    "id": "3",
+    "id": 3,
     "name": "VERANO 2021 - ESPECIAL CUYO - MENDOZA",
-    "category": "paquete",
-    "destination": "mendoza",
-    "hotel": "internacional mendoza",
+    "price": "19999",
     "description": "El Hotel Internacional es un establecimiento moderno situado en las estribaciones de los Andes, en el centro de Mendoza. Dispone de piscina al aire libre y habitaciones con conexión Wi-Fi gratuita. La plaza principal y la avenida principal están a 200 metros.",
-    "includes": "Aéreos Buenos Aires/Mendoza/Buenos Aires. Un equipaje de mano de hasta 10kg Traslados de llegada y de salida. Alojamiento según régimen seleccionado. Coordinador",
-    "nights": "3",
-    "transfer": "true",
-    "price": "14690",
     "image": "?"
   },
   {
-    "id": "4",
+    "id": 4,
     "name": "3 noches en PUERTO IGUAZU",
     "category": "paquete",
     "destination": "misiones",
@@ -52,7 +40,7 @@
     "image": "?"
   },
   {
-    "id": "5",
+    "id": 5,
     "name": "3 noches en BARILOCHE",
     "category": "paquete",
     "destination": "rio negro",
@@ -65,7 +53,7 @@
     "image": "?"
   },
   {
-    "id": "6",
+    "id": 6,
     "name": "3 noches en PUERTO IGUAZU",
     "category": "paquete",
     "destination": "misiones",
@@ -78,7 +66,7 @@
     "image": "?"
   },
   {
-    "id": "7",
+    "id": 7,
     "name": "3 noches en EL CALAFATE",
     "category": "paquete",
     "destination": "santa cruz",
@@ -91,7 +79,7 @@
     "image": "?"
   },
   {
-    "id": "8",
+    "id": 8,
     "name": "3 noches en USHUAIA",
     "category": "paquete",
     "destination": "tierra del fuego",
@@ -104,7 +92,7 @@
     "image": "?"
   },
   {
-    "id": "9",
+    "id": 9,
     "name": "5 noches en MENDOZA",
     "category": "paquete",
     "destination": "mendoza",
@@ -117,7 +105,7 @@
     "image": "?"
   },
   {
-    "id": "10",
+    "id": 10,
     "name": "5 noches en PURMAMARCA",
     "category": "paquete",
     "destination": "jujuy",
@@ -130,7 +118,7 @@
     "image": "?"
   },
   {
-    "id": "11",
+    "id": 11,
     "name": "5 noches en CALAFATE",
     "category": "paquete",
     "destination": "santa cruz",
@@ -143,7 +131,7 @@
     "image": "?"
   },
   {
-    "id": "12",
+    "id": 12,
     "name": "6 noches en SALTA",
     "category": "paquete",
     "destination": "salta",
@@ -156,7 +144,7 @@
     "image": "?"
   },
   {
-    "id": "13",
+    "id": 13,
     "name": "6 noches en USHUAIA",
     "category": "paquete",
     "destination": "tierra del fuego",
@@ -169,7 +157,7 @@
     "image": "?"
   },
   {
-    "id": "14",
+    "id": 14,
     "name": "5 noches en EL CALAFATE",
     "category": "paquete",
     "destination": "santa cruz",
@@ -182,7 +170,7 @@
     "image": "?"
   },
   {
-    "id": "15",
+    "id": 15,
     "name": "kenton palace",
     "category": "hotel",
     "destination": "rio negro",
@@ -195,7 +183,7 @@
     "image": "?"
   },
   {
-    "id": "16",
+    "id": 16,
     "name": "alma del lago",
     "category": "hotel",
     "destination": "rio negro",
@@ -208,7 +196,7 @@
     "image": "?"
   },
   {
-    "id": "17",
+    "id": 17,
     "name": "LLAO LLAO HOTEL & RESORT GOLF- SPA",
     "category": "hotel",
     "destination": "rio negro",
@@ -221,7 +209,7 @@
     "image": "?"
   },
   {
-    "id": "18",
+    "id": 18,
     "name": "cerro tronador",
     "category": "excursion",
     "destination": "rio negro",
@@ -233,7 +221,7 @@
     "image": "?"
   },
   {
-    "id": "19",
+    "id": 19,
     "name": "circuito chico y cerro catedral",
     "category": "excursion",
     "destination": "rio negro",
@@ -245,7 +233,7 @@
     "image": "?"
   },
   {
-    "id": "20",
+    "id": 20,
     "name": "el bolson",
     "category": "excursion",
     "destination": "rio negro",

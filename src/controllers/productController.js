@@ -4,6 +4,7 @@ const multer = require('multer');
 
 const productsFilePath = path.join(__dirname, '../data/productsDB.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const imageDir = path.join(__dirname, '../../public/img/img_travels');
 
 module.exports = {
     all: (req, res, next) => {
@@ -19,22 +20,20 @@ module.exports = {
     },
     create: (req, res) => {
         newProduct = {
-            id: products[products.length - 1].id + 1,
+            id: products.slice(-1)[0].id + 1,
             ...req.body,
-            image: req.file.filename
         }
-        let newDB = JSON.stringify([...products, newProduct], null, 2);
-        fs.writeFileSync(productsFilePath, newDB);
-        res.redirect('/');
+        products.push(newProduct)
+        let productsJson = JSON.stringify(products, null, 2);
+        fs.writeFileSync(productsFilePath, productsJson);
+        res.redirect('/products');
     },
     editForm: function (req, res) {
-        let products = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/productsDataBase.json')));
-        product = products.filter(prod => prod.id == req.params.id)[0];
-        res.render('editProduct', { product });
+        let product = products.filter(prod => prod.id == req.params.id)[0];
+        res.render('products/editProduct', { title: 'Editar', product: product });
     },
     edit: function (req, res) {
-        let products = JSON.parse(fs.readFileSync(productsPath));
-        let product = products.filter(prod => prod.id == req.params.id)[0];
+        let product = products.find(prod => prod.id == req.params.id);
         let index = products.indexOf(product);
         let editProduct = {}
         if (typeof req.body.image === 'undefined') {
@@ -42,15 +41,13 @@ module.exports = {
                 id: product.id,
                 ...req.body,
                 image: product.image,
-                category: product.category
             };
         } else {
             editProduct = {
                 id: product.id,
                 ...req.body,
-                category: product.category
             }
-            fs.unlink(path.join(__dirname, '../../public/img/products', product.image), (err) => {
+            fs.unlink(path.join(imageDir, product.image), (err) => {
                 if (err) {
                     console.error(err);
                     return
@@ -59,14 +56,12 @@ module.exports = {
         }
         products[index] = editProduct
         let productsJson = JSON.stringify(products, null, 2);
-        fs.writeFileSync(productsPath, productsJson);
-        res.redirect('/products/' + product.id);
+        fs.writeFileSync(productsFilePath, productsJson);
+        res.redirect('/products');
     },
     delete: function (req, res) {
-        let products = JSON.parse(fs.readFileSync(productsPath));
-        products = products.filter(prod => prod.id != req.params.id);
-        console.log(products.length);
-        let productsJson = JSON.stringify(products, null, 2);
+        let productsNew = products.filter(prod => prod.id != req.params.id);
+        let productsJson = JSON.stringify(productsNew, null, 2);
         fs.writeFileSync(productsPath, productsJson);
         res.redirect('/products');
     },
