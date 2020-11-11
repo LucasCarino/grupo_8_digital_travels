@@ -1,3 +1,24 @@
+Restrospectiva SPRINT 3 del Equipo 8:
+
+En esta oportunidad seguiremos usando el metodo Starfish, con las ideas y conclusiones en 5 areas: Empezar a Hacer, Seguir haciendo, No hacer mas, Hacer mas, Hacer menos.
+
+Empezar a Hacer, 
+debemos comenzar a hablar un poco mas seguido, ya que a esta altura del curso y del año, debido a trabajos, estudios y situaciones particulares de cada uno, se nota un poco menos energia que al inicio y estamos algo mas desconectados en los avances del sprint, aunque igualmente llegamos a termino.
+
+Seguir haciendo, 
+Seguir con la buena onda, colaboracion y comunicacion del grupo al igual que desde el principio. 
+
+No hacer mas, 
+Nada por aqui.
+
+Hacer mas, 
+distribuirnos mejor el trabajo individual, ya que por falta de tiempo se nos complico hacer zooms entre los tres como al principio.
+
+Hacer menos,
+Nada por aqui.
+
+
+
 Restrospectiva SPRINT 2 del Equipo 8:
 
 Seguiremos utilizaremos el metodo Estrella de Mar o Starfish, con las ideas y conclusiones en 5 areas: Empezar a Hacer, Seguir haciendo, No hacer mas, Hacer mas, Hacer menos.
