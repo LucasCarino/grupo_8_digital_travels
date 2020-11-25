@@ -25,4 +25,6 @@ router.get('/edit/:id', controller.editForm);
 router.post('/edit/:id', upload.single('image'), controller.edit);
 router.post('/delete/:id', controller.delete);
 
+router.get('/db', controller.db);
+
 module.exports = router;

@@ -4,7 +4,7 @@ var path = require('path');
 var cookie = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session'); // para usar session y cookies
-const methodOverride =  require('method-override'); // Para poder usar los métodos PUT y DELETE
+const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 const log = require('./middlewares/log') // middleware para mandar var locals del email a la vista
 
 var indexRouter = require('./routes/index');
@@ -26,7 +26,7 @@ app.use(session({ // para usar session, secret identifica la pagina mia
   secret: 'Digital Travels',
   resave: true,
   saveUninitialized: true
-})); 
+}));
 app.use(log); // middleware para mandar var locals del email a la vista
 
 app.use('/', indexRouter);

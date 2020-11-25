@@ -11,24 +11,25 @@
                 Nuestros paquetes turísticos
             </h2>
             <section class="product__detail">
-                <% products.forEach(product => { %>
-                <a href="/products/detail/<%= product.id %>">
+                <% packages.forEach(package => { %>
+                <a href="/products/detail/<%= package.id %>">
                     <article class="product__article">
-                        <h3><%= product.name %></h3>
+                        <h3><%= package.name %></h3>
                         <div class="productimg__div">
-                            <img src="img/promo1.jpg" alt="destino">
+                            <img src="/img/img_travels/<%= package.image %>" alt="destino">
                         </div>
                         <div class="product__desc">
-                            <p><%= product.description %></p>
-                            <h4>$ <%= product.price %> por persona</h4>
+                            <p><%= package.description %></p>
+                            <h4>$ <%= package.price %> por persona</h4>
                         </div>
                     </article>
                 </a>
                 <% }) %>
 
 
-                <a href="/products/create"><button class="createProduct__button">Crear
-                        nuevo paquete turístico</button></a>
+                <a href=" /products/create"><button class="createProduct__button">Crear
+                        nuevo paquete turístico</button>
+                </a>
             </section>
         </main>
         <%- include('../partials/footer') %>

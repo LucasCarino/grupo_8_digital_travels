@@ -5,16 +5,37 @@ const multer = require('multer');
 const productsFilePath = path.join(__dirname, '../data/productsDB.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const imageDir = path.join(__dirname, '../../public/img/img_travels');
+const { Travel_package } = require('../database/models');
 
 module.exports = {
-    all: (req, res, next) => {
-        res.render('products/products', { title: 'Productos', products: products });
+    all: async (req, res, next) => {
+        try {
+            const packages = await Travel_package.findAll({
+                include: { all: true },
+                order: [
+                    ['name', 'ASC']
+                ]
+            });
+            await res.render('products/products', { title: 'Nuestros paquetes turísticos', packages: packages });
+        } catch (err) {
+            console.log(err);
+        }
     },
-    detail: (req, res, next) => {
-        idProducto = req.params.id;
-        let product = products.find((producto) => producto.id == req.params.id);
-        res.render('products/productDetail', { title: product.name, product: product })
-    },
+    detail:
+        async (req, res, next) => {
+            try {
+                const package = await Travel_package.findByPk(req.params.id, { include: { all: true } });
+                await res.render('products/productDetail', { package: package, title: 'hola' });
+            } catch (err) {
+                console.log(err);
+            }
+            // try {
+            //     const package = await Travel_package.findByPk(req.params.id, { include: ['Hotel'] });
+            //     await res.json(package)
+            // } catch (err) {
+            //     console.log(err);
+            // }
+        },
     createForm: (req, res) => {
         res.render('products/createProduct', { title: 'Vender' });
     },
@@ -65,4 +86,13 @@ module.exports = {
         fs.writeFileSync(productsFilePath, productsJson);
         res.redirect('/products');
     },
+    db: async (req, res) => {
+        try {
+            const packages = await Travel_package.findAll({ include: { all: true } })
+            res.json(packages);
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
 }

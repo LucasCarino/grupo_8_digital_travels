@@ -9,19 +9,19 @@
         <main>
             <%- include('../partials/search__bar') %>
             <section class="productdetail__section">
-                <h2 class="section__title"><%= product.name %></h2>
+                <h2 class="section__title"><%= package.name %></h2>
                 <article class="productdetail__article">
                     <div class="detail__img">
-                        <img src="/img/promo2.jpg" alt="destino">
+                        <img src="/img/img_travels/<%= package.Hotel.image %>" alt="destino">
                     </div>
                     <div class="productdetail__desc">
-                        <p><%= product.description %></p>
                         <ul>
-                            <li>Hotel: <%= product.hotel %></li>
-                            <li>Incluye: <%= product.includes %></li>
-                            <li>Noches: <%= product.nights %></li>
+                            <h2>Hotel: <%= package.Hotel.name %></h2>
+                            <li><%= package.Hotel.description %></li>
+                            <li>Noches: <%= package.total_nights %></li>
+                            <li>Incluye: <%= package.Transfer.name %> y Excursion <%= package.Excursion.name %> </li>
                         </ul>
-                        <h4>$<%= product.price %> por persona</h4>
+                        <h4>$<%= package.price %> por persona</h4>
                         <div class="cart__semitotal">
                             <i class="fas fa-user"></i>
                             <select name="personas">
@@ -32,10 +32,10 @@
                             </select>
                         </div>
                         <button>Añadir a Mis Viajes</button>
-                        <form action="/products/delete/<%= product.id %>" method="POST">
+                        <form action="/products/delete/<%= package.id %>" method="POST">
                             <button type="submit">Borrar</button>
                         </form>
-                        <a href="/products/edit/<%= product.id %>"><button>Editar</button></a>
+                        <a href="/products/edit/<%= package.id %>"><button>Editar</button></a>
                     </div>
                 </article>
                 <a href="/products">Volver al listado</a>
