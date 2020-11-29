@@ -13,9 +13,9 @@ module.exports = (sequelize, DataTypes) => {
         transfer_id: DataTypes.INTEGER
     })
     travelPackage.associate = (models => {
-        travelPackage.belongsTo(models.Hotel);
-        travelPackage.belongsTo(models.Excursion);
-        travelPackage.belongsTo(models.Transfer);
+        travelPackage.belongsTo(models.Hotel);      // un paquete tiene solo un hotel
+        travelPackage.belongsTo(models.Excursion);  // un paquete tiene solo una excursion
+        travelPackage.belongsTo(models.Transfer);   // un paquete tiene solo un transfer
     })
     return travelPackage;
 }

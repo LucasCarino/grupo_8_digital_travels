@@ -3,7 +3,7 @@ const path = require('path');
 const multer = require('multer');
 
 const productsFilePath = path.join(__dirname, '../data/productsDB.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const imageDir = path.join(__dirname, '../../public/img/img_travels');
 const { Travel_package } = require('../database/models');
 

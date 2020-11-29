@@ -7,7 +7,7 @@
     <div class="container">
         <%- include('../partials/header__min') %>
         <main class="login__main">
-            <h1 class="user-form-title">¡Hola! Ingresá tu e‑mail o usuario</h1>
+            <h1 class="user-form-title">¡Hola! Ingresá tu Usuario</h1>
             <form class="register__form" action="/users/login" method="POST">
                 <% if (typeof errors != "undefined") { %>
                     <% errors.forEach(error => { %>
@@ -16,7 +16,7 @@
                 <% } %>
                 <div>
                     <input type="text" name="username" id="username" required placeholder=" ">
-                    <label for="username">E-mail o usuario</label>
+                    <label for="username">Usuario</label>
                 </div>
                 <div>
                     <input type="password" id="password" name="password" required placeholder=" ">

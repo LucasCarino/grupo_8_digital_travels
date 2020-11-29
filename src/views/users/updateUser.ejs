@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<body>
+
+    <h1>Edicion del Usuario con ID:  <%= toEdit.id %> </h1>
+    <section>        
+        <form action="/users/update/<%= toEdit.id %>?_method=PUT" method="POST"> <!--esto debe ir por PUT, instalar method override -->
+            <label for="">Nombre: </label>
+            <input type="text" name="first_name" value="<%= toEdit.first_name %>">
+            <p></p>
+            <label for="">Apellido: </label>
+            <input type="text" name="last_name" value="<%= toEdit.last_name %>">
+           <p></p>
+            <label for="">Usuario: </label>
+            <input type="text" name="username" value="<%= toEdit.username %>">
+            <p></p>
+            <label for="">Email: </label>
+            <input type="text" name="email" value="<%= toEdit.email %>"> 
+            <p></p>
+            <button type="submit">Actualizar</button>
+            <p></p>
+            <a href="/products/"> <button> Cancelar </button></a>
+        
+        
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<body>
+
+    <h1>Detalles del Usuario con ID:  <%= oneUser.id %> </h1>
+    <section>        
+        <article>                  
+                <h5>Nombre: <%= oneUser.first_name %> </h5>
+                <h5>Apellido:  <%= oneUser.last_name %> </h5>
+                <h5>Usuario: <%= oneUser.username %> </h5>
+                <h5>Email: <%= oneUser.email %> </h5>                                 
+                <p></p>                                                                                                 
+
+        </article>
+        <a href="/users/update/<%= oneUser.id %>"> 
+            <button> Modificar </button>
+        </a>  
+         <p></p>
+         <form action="/users/delete/<%= oneUser.id %>?_method=DELETE" method="POST">
+            <button type="submit">Borrar</button>
+        </form> 
+    </section>
+</body>
+</html>

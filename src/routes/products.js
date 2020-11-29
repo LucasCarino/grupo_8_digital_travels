@@ -19,11 +19,11 @@ var upload = multer({ storage: storage });
 
 router.get('/', controller.all);
 router.get('/detail/:id', controller.detail);
-router.get('/create', controller.createForm);
-router.post('/create', upload.single('image'), controller.create);
-router.get('/edit/:id', controller.editForm);
-router.post('/edit/:id', upload.single('image'), controller.edit);
-router.post('/delete/:id', controller.delete);
+router.get('/create', controller.createForm);                       // llama al form de creacion
+router.post('/create', upload.single('image'), controller.create);  // recibe datos del form de creacion
+router.get('/edit/:id', controller.editForm);                       // llama al form de edicion
+router.post('/edit/:id', upload.single('image'), controller.edit);  // recibe datos del form de edicion
+router.post('/delete/:id', controller.delete);                      // borrar 
 
 router.get('/db', controller.db);
 

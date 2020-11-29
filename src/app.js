@@ -29,6 +29,8 @@ app.use(session({ // para usar session, secret identifica la pagina mia
 }));
 app.use(log); // middleware para mandar var locals del email a la vista
 
+app.use(methodOverride('_method')) // para usar delete y put
+
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);

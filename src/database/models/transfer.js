@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         image: DataTypes.STRING,
     })
     Transfer.associate = models => {
-        Transfer.hasMany(models.Travel_package)
+        Transfer.hasMany(models.Travel_package) // un transfer puede tener muchos paquetes
     }
     return Transfer;
 }

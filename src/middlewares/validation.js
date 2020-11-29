@@ -2,12 +2,12 @@ const { body } = require('express-validator');
 
 module.exports = {
     register: [
-        body('nombre')
+        body('first_name')
             .notEmpty()
-            .withMessage('Este campo es obligatorio'),
-        body('apellido')
+            .withMessage('Nombre es obligatorio'),
+        body('last_name')
             .notEmpty()
-            .withMessage('Este campo es obligatorio'),
+            .withMessage('Apellido es obligatorio'),
         body('username')
             .notEmpty()
             .withMessage('Este campo es obligatorio')
@@ -21,7 +21,7 @@ module.exports = {
         body('password')
             .notEmpty()
             .withMessage('Este campo es obligatorio')
-            .isLength( {min: 8} )
+            .isLength( {min: 4} )
             .withMessage('La contraseña debe tener al menos 8 caracteres'),
         body('passwordcheck')
             .notEmpty()
