@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../../partials/head') %>
+
+<body>
+    <div class="container">
+        <%- include('../../partials/header__min') %>
+        <main class="register__main">
+            <h1 class="user-form-title">Publicá tu Excursión</h1>
+            <form class="register__form" method="POST" action="/products/create" enctype="multipart/form-data">
+                <div>
+                    <input type="text" name="name" id="name" required placeholder=" ">
+                    <label for="name">Nombre de la excursión</label>
+                </div>
+                <div>
+                    <input type="number" id="price" name="price" required placeholder=" ">
+                    <label for="price">Precio</label>
+                </div>
+                <div>
+                    <label for="description" id="textarea-label">Descripción</label>
+                    <textarea id="description" name="description" required placeholder=" "></textarea>
+                </div>
+                <div>
+                    <input type="file" id="image" name="image" required>
+                    <label for="image">Imagen</label>
+                </div>
+
+                <button type="submit" class="submit-button">Publicar</button>
+            </form>
+        </main>
+        <%- include('../../partials/footer__min2') %>
+    </div>
+</body>
+
+</html>

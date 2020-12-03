@@ -38,8 +38,8 @@ app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 app.use('/hoteles', hotelesRouter);
-// app.use('/excursiones', excursionesRouter);
-// app.use('/traslados', trasladosRouter);
+app.use('/excursiones', excursionesRouter);
+app.use('/traslados', trasladosRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

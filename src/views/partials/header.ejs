@@ -31,20 +31,22 @@
         </script>
         <nav class="nav__cta">
             <p id="slogan">Te acompañamos desde el primer paso.</p>
-            
+
             <div class="cta__items">
-                <% if(!usuario){ %> <!-- usuario es locals.usuario seteado en el middle log.js, si esta vacio muestro solo ingresar y registrate -->
-                    <a href="/users/login">Ingresar </a>
-                <% } %> 
-                
+                <% if(!usuario){ %>
+                <!-- usuario es locals.usuario seteado en el middle log.js, si esta vacio muestro solo ingresar y registrate -->
+                <a href="/users/login">Ingresar </a>
+                <% } %>
+
                 <a href="/users/register">Registrate</a>
 
-                <% if(usuario){ %> <!-- usuario es locals.usuario seteado en el middle log.js -->
-                    <p id="slogan">Bienvenido, <%= usuario %></p>                    		 
-                    <a href="/users/logout">Salir </a>
-                <% } %> 
+                <% if(usuario){ %>
+                <!-- usuario es locals.usuario seteado en el middle log.js -->
+                <p id="slogan">Bienvenido, <%= usuario %></p>
+                <a href="/users/logout">Salir </a>
+                <% } %>
 
-                
+
                 <a href="/users/carrito"><i class="fas fa-suitcase-rolling"></i></a>
                 <form id="darkmode__form">
                     <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch" value="on"
