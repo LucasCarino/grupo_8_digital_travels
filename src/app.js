@@ -10,6 +10,9 @@ const log = require('./middlewares/log') // middleware para mandar var locals de
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var hotelesRouter = require('./routes/hoteles');
+var excursionesRouter = require('./routes/excursiones');
+var trasladosRouter = require('./routes/traslados');
 
 var app = express();
 
@@ -34,6 +37,9 @@ app.use(methodOverride('_method')) // para usar delete y put
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
+app.use('/hoteles', hotelesRouter);
+// app.use('/excursiones', excursionesRouter);
+// app.use('/traslados', trasladosRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
