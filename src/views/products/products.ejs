@@ -8,19 +8,19 @@
         <main>
             <%- include('../partials/search__bar') %>
             <h2 class="section__title">
-                Nuestros paquetes turísticos
+                <%= section %>
             </h2>
             <section class="product__detail">
-                <% packages.forEach(package => { %>
-                <a href="/products/detail/<%= package.id %>">
+                <% products.forEach(product => { %>
+                <a href="/<%= type %>/detail/<%= product.id %>">
                     <article class="product__article">
-                        <h3><%= package.name %></h3>
+                        <h3><%= product.name %></h3>
                         <div class="productimg__div">
-                            <img src="/img/img_travels/<%= package.image %>" alt="destino">
+                            <img src="/img/img_travels/<%= product.image %>" alt="destino">
                         </div>
                         <div class="product__desc">
-                            <p><%= package.description %></p>
-                            <h4>$ <%= package.price %> por persona</h4>
+                            <p><%= product.description %></p>
+                            <h4>$ <%= product.price %> por persona</h4>
                         </div>
                     </article>
                 </a>

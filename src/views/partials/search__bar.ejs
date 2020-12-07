@@ -1,7 +1,7 @@
 <section class="search__bar">
     <div class="nav-search" id="searchPaquetes">
         <h2 class="section__title">Descubre tu próximo viaje</h2>
-        <form class="search__form" action="/paquetes" method="GET">
+        <form class="search__form" action="/paquetes/search" method="GET">
             <div class="form__input">
                 <div>
                     <label for="destino">Destino</label>
@@ -32,7 +32,7 @@
     </div>
     <div class="hide nav-search" id="searchAlojamientos">
         <h2 class="section__title">Encuentra tu hotel ideal</h2>
-        <form class="search__form" action="/paquetes" method="GET">
+        <form class="search__form" action="/hoteles/search" method="GET">
             <div class="form__input">
                 <div>
                     <label for="destino">Destino</label>
@@ -64,7 +64,7 @@
     <div class="hide nav-search" id="searchExcursiones">
         <h2 class="section__title">Actividades para tu viaje</h2>
         <div class="form__excursiones">
-            <form class="search__form" action="/excursiones" method="GET">
+            <form class="search__form" action="/excursiones/search" method="GET">
                 <div class="form__input">
                     <label for="destino">Destino</label>
                     <input type="text" id="destino" name="destino" placeholder="Ingresá el destino al que viajás">
@@ -75,7 +75,7 @@
     </div>
     <div class="hide nav-search" id="searchTraslados">
         <h2 class="section__title">Traslados desde y hacia tu hotel</h2>
-        <form class="search__form" action="/traslados" method="GET">
+        <form class="search__form" action="/traslados/search" method="GET">
             <div class="form__input__traslado">
                 <div>
                     <label for="desde">Desde</label>

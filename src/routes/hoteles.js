@@ -23,7 +23,8 @@ router.get('/create', controller.createForm);                       // llama al 
 router.post('/create', upload.single('image'), controller.create);  // recibe datos del form de creacion
 router.get('/edit/:id', controller.editForm);                       // llama al form de edicion
 router.post('/edit/:id', upload.single('image'), controller.edit);  // recibe datos del form de edicion
-// router.post('/delete/:id', controller.delete);                      // borrar 
-
+router.get('/search', controller.search);
+router.get('/delete/:id', controller.deleteForm);                      // borrar 
+router.post('/delete/:id', controller.delete);                      // borrar 
 
 module.exports = router;
