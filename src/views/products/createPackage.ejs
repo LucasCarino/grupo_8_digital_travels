@@ -7,22 +7,56 @@
         <%- include('../partials/header__min') %>
         <main class="register__main">
             <h1 class="user-form-title">Publicá tu viaje</h1>
-            <form class="register__form" method="POST" action="/products/create" enctype="multipart/form-data">
+            <form class="register__form" method="POST" action="/paquetes/create" enctype="multipart/form-data">
                 <div>
                     <input type="text" name="name" id="name" required placeholder=" ">
-                    <label for="name">Nombre del paquete turístico</label>
+                    <label for="name">Nombre del paquete</label>
                 </div>
                 <div>
-                    <input type="number" id="price" name="price" required placeholder=" ">
-                    <label for="price">Precio</label>
+                    <input type="text" name="destination" id="destination" required placeholder=" ">
+                    <label for="destination">Destino</label>
                 </div>
                 <div>
                     <label for="description" id="textarea-label">Descripción</label>
                     <textarea id="description" name="description" required placeholder=" "></textarea>
                 </div>
                 <div>
+                    <input type="number" id="total_nights" name="total_nights" required placeholder=" ">
+                    <label for="total_nights">Noches</label>
+                </div>
+                <div>
+                    <input type="number" id="price" name="price" required placeholder=" ">
+                    <label for="price">Precio</label>
+                </div>
+                <div>
                     <input type="file" id="image" name="image" required>
                     <label for="image">Imagen</label>
+                </div>
+                <div>
+                    <select name="hotel_id" id="hotel_id">
+                        <% hotels.forEach(hotel => { %>
+                        <option value="<%= hotel.id %>"><%= hotel.name %></option>
+                        <% }) %>
+                    </select>
+                    <label for="hotel_id">Hotel</label>
+                </div>
+                <div>
+                    <select name="excursion_id" id="excursion_id">
+                        <!-- <option value="">Ninguna</option> -->
+                        <% excursions.forEach(excursion => { %>
+                        <option value="<%= excursion.id %>"><%= excursion.name %></option>
+                        <% }) %>
+                    </select>
+                    <label for="excursion_id">Excursión</label>
+                </div>
+                <div>
+                    <select name="transfer_id" id="transfer_id">
+                        <!-- <option value="">Ninguno</option> -->
+                        <% transfers.forEach(transfer => { %>
+                        <option value="<%= transfer.id %>"><%= transfer.name %></option>
+                        <% }) %>
+                    </select>
+                    <label for="transfer_id">Traslado</label>
                 </div>
 
                 <button type="submit" class="submit-button">Publicar</button>

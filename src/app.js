@@ -9,7 +9,7 @@ const log = require('./middlewares/log') // middleware para mandar var locals de
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var productsRouter = require('./routes/products');
+var paquetesRouter = require('./routes/paquetes');
 var hotelesRouter = require('./routes/hoteles');
 var excursionesRouter = require('./routes/excursiones');
 var trasladosRouter = require('./routes/traslados');
@@ -35,7 +35,7 @@ app.use(log); // middleware para mandar var locals del email a la vista
 app.use(methodOverride('_method')) // para usar delete y put
 
 app.use('/', indexRouter);
-app.use('/products', productsRouter);
+app.use('/paquetes', paquetesRouter);
 app.use('/users', usersRouter);
 app.use('/hoteles', hotelesRouter);
 app.use('/excursiones', excursionesRouter);
