@@ -2,6 +2,26 @@ const {Travel_package, Hotel, Excursion, Transfer} = require('../database/models
 const {Op} = require('sequelize');      
 
 module.exports = {
+    all: async (req, res) => {
+        try {
+            let products = await Travel_package.findAll();
+            res.render('products/products', {
+                title: 'Paquetes',
+                products,
+                section: `Todos los paquetes`,
+                type: 'paquetes'
+            });
+        } catch (error) {
+            res.send(error.message)
+        }
+    },
+    detail: async (req, res) => {
+        try {
+            
+        } catch (error) {
+            res.send(error.message)
+        }
+    },
     createForm: async (req, res) => {
         try {
             let hotels = await Hotel.findAll();

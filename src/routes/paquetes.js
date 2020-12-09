@@ -17,8 +17,8 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 
-// router.get('/', controller.all);
-// router.get('/detail/:id', controller.detail);
+router.get('/', controller.all);
+router.get('/detail/:id', controller.detail);
 router.get('/create', controller.createForm);                       // llama al form de creacion
 router.post('/create', upload.single('image'), controller.create);  // recibe datos del form de creacion
 router.get('/edit/:id', controller.editForm);                       // llama al form de edicion
