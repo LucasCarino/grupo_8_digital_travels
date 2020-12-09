@@ -17,7 +17,8 @@ module.exports = {
     },
     detail: async (req, res) => {
         try {
-            
+            let package = await Travel_package.findByPk(req.params.id, {include: ['Hotel', 'Excursion', 'Transfer']});
+            res.render('products/packageDetail', {title: 'Detalle', package})
         } catch (error) {
             res.send(error.message)
         }
@@ -27,7 +28,7 @@ module.exports = {
             let hotels = await Hotel.findAll();
             let excursions = await Excursion.findAll();
             let transfers = await Transfer.findAll();
-            res.render('products/createPackage', {title: 'Crear Hotel', hotels, transfers, excursions})
+            res.render('products/createPackage', {title: 'Crear Paquete', hotels, transfers, excursions})
         } catch (error) {
             res.send(error.message)
         }
@@ -94,7 +95,7 @@ module.exports = {
     },
     delete: async (req, res) => {
         try {
-            await Travel_package.destroy({where: {id: req.body.id}});
+            await Travel_package.destroy({where: {id: req.params.id}});
             res.redirect('/')
         } catch (error){
              res.send(error.message);

@@ -9,19 +9,16 @@
         <main>
             <%- include('../partials/search__bar') %>
             <section class="productdetail__section">
-                <h2 class="section__title"><%= package.name %></h2>
+                <h2 class="section__title"><%= product.name %></h2>
                 <article class="productdetail__article">
                     <div class="detail__img">
-                        <img src="/img/img_travels/<%= package.Hotel.image %>" alt="destino">
+                        <img src="/img/img_travels/<%= product.image %>" alt="imagen">
                     </div>
                     <div class="productdetail__desc">
                         <ul>
-                            <h2>Hotel: <%= package.Hotel.name %></h2>
-                            <li><%= package.Hotel.description %></li>
-                            <li>Noches: <%= package.total_nights %></li>
-                            <li>Incluye: <%= package.Transfer.name %> y Excursion <%= package.Excursion.name %> </li>
+                            <li><%= product.description %></li>                            
                         </ul>
-                        <h4>$<%= package.price %> por persona</h4>
+                        <h4>$<%= product.price %> por persona</h4>
                         <div class="cart__semitotal">
                             <i class="fas fa-user"></i>
                             <select name="personas">
@@ -32,11 +29,11 @@
                             </select>
                         </div>
                         <button>Añadir a Mis Viajes</button>
-                        <a href="/paquetes/delete/<%= package.id %>"><button>Eliminar</button></a>
-                        <a href="/paquetes/edit/<%= package.id %>"><button>Editar</button></a>
+                        <a href="/<%= type %>/delete/<%= product.id %>"><button>Eliminar</button></a>
+                        <a href="/<%= type %>/edit/<%= product.id %>"><button>Editar</button></a>
                     </div>
                 </article>
-                <a href="/paquetes">Volver al listado</a>
+                <a href="/<%= type %>">Volver al listado</a>
             </section>
         </main>
         <%- include('../partials/footer') %>

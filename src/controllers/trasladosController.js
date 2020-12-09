@@ -2,6 +2,27 @@ const { Transfer } = require('../database/models');
 const { Op } = require('sequelize');
 
 module.exports = {
+    all: async (req, res) => {
+        try {
+            let products = await Transfer.findAll();
+            res.render('products/products', {
+                title: 'Traslados',
+                products,
+                section: `Todos los traslados`,
+                type: 'traslados'
+            });
+        } catch (error) {
+            res.send(error.message)
+        }
+    },
+    detail: async (req, res) => {
+        try {
+            let product = await Transfer.findByPk(req.params.id);
+            res.render('products/productDetail', {title: 'Detalle', product, type: 'traslados'})
+        } catch (error) {
+            res.send(error.message)
+        }
+    },
     createForm: (req, res) => {
         res.render('products/traslados/createTraslado', { title: 'Pública tu traslado' })
     },
@@ -64,7 +85,7 @@ module.exports = {
     },
     delete: async (req, res) => {
         try {
-            await Transfer.destroy({where: {id: req.body.id}});
+            await Transfer.destroy({where: {id: req.params.id}});
             res.redirect('/')
         } catch (error){
              res.send(error.message);

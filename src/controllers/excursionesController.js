@@ -2,6 +2,27 @@ const { Excursion } = require('../database/models');
 const { Op } = require('sequelize');
 
 module.exports = {
+    all: async (req, res) => {
+        try {
+            let products = await Excursion.findAll();
+            res.render('products/products', {
+                title: 'Excursiones',
+                products,
+                section: `Todas las excursiones`,
+                type: 'excursiones'
+            });
+        } catch (error) {
+            res.send(error.message)
+        }
+    },
+    detail: async (req, res) => {
+        try {
+            let product = await Excursion.findByPk(req.params.id);
+            res.render('products/productDetail', {title: 'Detalle', product, type: 'excursiones'})
+        } catch (error) {
+            res.send(error.message)
+        }
+    },
     createForm: (req, res) => {
         res.render('products/excursiones/createExcursion', { title: 'Crear Excursión' })
     },
@@ -53,18 +74,18 @@ module.exports = {
                 },
                 raw: true
             })
-            res.render('products/products', { title: 'Busqueda', products: results, section: `Resultados de la búsqueda ${req.query.destino}`, type: 'escursiones'})
+            res.render('products/products', { title: 'Busqueda', products: results, section: `Resultados de la búsqueda ${req.query.destino}`, type: 'excursiones'})
         } catch (error) {
             res.send(error.message);
         }
     },
     deleteForm: async (req, res) => {
-        let product = await Escursion.findByPk(req.params.id)
-        res.render('products/esxcursiones/deleteExcursion', { title: 'Eliminar', product: product }) 
+        let product = await Excursion.findByPk(req.params.id)
+        res.render('products/deleteForm', { title: 'Eliminar', product: product, route: 'excursiones' }) 
     },
     delete: async (req, res) => {
         try {
-            await Excursion.destroy({where: {id: req.body.id}});
+            await Excursion.destroy({where: {id: req.params.id}});
             res.redirect('/')
         } catch (error){
              res.send(error.message);

@@ -2,6 +2,27 @@ const {Hotel} = require('../database/models');
 const {Op} = require('sequelize');      
 
 module.exports = {
+    all: async (req, res) => {
+        try {
+            let products = await Hotel.findAll();
+            res.render('products/products', {
+                title: 'Hoteles',
+                products,
+                section: `Todos los hoteles`,
+                type: 'hoteles'
+            });
+        } catch (error) {
+            res.send(error.message)
+        }
+    },
+    detail: async (req, res) => {
+        try {
+            let product = await Hotel.findByPk(req.params.id);
+            res.render('products/productDetail', {title: 'Detalle', product, type: 'hoteles'})
+        } catch (error) {
+            res.send(error.message)
+        }
+    },
     createForm: (req, res) => {
         res.render('products/hoteles/createHotel', {title: 'Crear Hotel'})
     },
@@ -64,7 +85,7 @@ module.exports = {
     },
     delete: async (req, res) => {
         try {
-            await Hotel.destroy({where: {id: req.body.id}});
+            await Hotel.destroy({where: {id: req.params.id}});
             res.redirect('/')
         } catch (error){
              res.send(error.message);
