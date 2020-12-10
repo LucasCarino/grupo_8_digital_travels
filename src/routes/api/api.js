@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../../controllers/api/apiPaquetesController');
+const paquetesAPIRouter = require('./paquetesApi');
 
-router.get('/paquetes', controller.all);
+router.use('/paquetes', paquetesAPIRouter);
 
 module.exports = router;
