@@ -13,6 +13,7 @@ var paquetesRouter = require('./routes/paquetes');
 var hotelesRouter = require('./routes/hoteles');
 var excursionesRouter = require('./routes/excursiones');
 var trasladosRouter = require('./routes/traslados');
+var apiRouter = require('./routes/api/api')
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use('/users', usersRouter);
 app.use('/hoteles', hotelesRouter);
 app.use('/excursiones', excursionesRouter);
 app.use('/traslados', trasladosRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
