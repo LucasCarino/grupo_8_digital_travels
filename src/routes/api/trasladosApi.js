@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const controller = require('../../controllers/api/apiPaquetesController');
+const controller = require('../../controllers/api/apiTrasladosController');
 
 const multer = require('multer');
 const path = require('path');

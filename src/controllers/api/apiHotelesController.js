@@ -4,13 +4,13 @@ const { Op } = require('sequelize');
 module.exports = {
     all: async (req, res) => {
         try {
-            let products = await Travel_package.findAll();
+            let products = await Hotel.findAll();
 
             if(products.length > 0){
                 let respuesta = {
                     metadata: {
                         status: 200, //200 es OK
-                        paquetes: products.length // pasamos cantidad encontrada
+                        hoteles: products.length // pasamos cantidad encontrada
                     },
                     products: products // aca si va la info requerida
                 }

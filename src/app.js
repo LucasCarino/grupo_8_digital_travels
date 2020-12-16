@@ -21,6 +21,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// registramos todos los middlewares
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -41,7 +43,7 @@ app.use('/users', usersRouter);
 app.use('/hoteles', hotelesRouter);
 app.use('/excursiones', excursionesRouter);
 app.use('/traslados', trasladosRouter);
-app.use('/api', apiRouter);
+app.use('/api', apiRouter);   // los pedidos de info de otros sistemas que no sean el front van a apuntar a esta ruta
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
