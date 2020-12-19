@@ -22,7 +22,7 @@ module.exports = {
             .notEmpty()
             .withMessage('Este campo es obligatorio')
             .isLength( {min: 4} )
-            .withMessage('La contraseña debe tener al menos 8 caracteres'),
+            .withMessage('La contraseña debe tener al menos 4 caracteres'),
         body('passwordcheck')
             .notEmpty()
             .withMessage('Este campo es obligatorio')

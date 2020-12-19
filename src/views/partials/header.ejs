@@ -33,16 +33,16 @@
             <p id="slogan">Te acompañamos desde el primer paso.</p>
 
             <div class="cta__items">
-                <% if(!usuario){ %>
-                <!-- usuario es locals.usuario seteado en el middle log.js, si esta vacio muestro solo ingresar y registrate -->
+                <% if(!email){ %>
+                <!-- usuario o email es locals.email seteado en el middle log.js, si esta vacio muestro solo ingresar y registrate -->
                 <a href="/users/login">Ingresar </a>
                 <% } %>
 
                 <a href="/users/register">Registrate</a>
 
-                <% if(usuario){ %>
+                <% if(email){ %>
                 <!-- usuario es locals.usuario seteado en el middle log.js -->
-                <p id="slogan">Bienvenido, <%= usuario %></p>
+                <p id="slogan">Bienvenido, <%= email %></p>
                 <a href="/users/logout">Salir </a>
                 <% } %>
 

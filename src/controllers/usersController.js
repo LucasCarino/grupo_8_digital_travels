@@ -14,22 +14,22 @@ module.exports = {
     },
     loginSend: async (req, res) => { // procesa datos recibidos por Post del login
         try {
-        var usuarioEncontrado = await Users.findAll({  // busco al usuario con el username que viene en el body del form
+        var emailEncontrado = await Users.findAll({  // busco al usuario con el username que viene en el body del form
             where: {
-                username: {[Op.like] : req.body.username}  //"%" + req.body.username + "%" es para meter comodines adelante y atras} 
+                email: {[Op.like] : req.body.email}  //"%" + req.body.username + "%" es para meter comodines adelante y atras} 
         }})
         //res.send(usuarioEncontrado) 
 
-        if (Object.keys(usuarioEncontrado).length == 0) {  // si el objeto esta vacio es que no encontro el username en la bd
+        if (Object.keys(emailEncontrado).length == 0) {  // si el objeto esta vacio es que no encontro el username en la bd
             res.render('users/login', {errors: 
                      [
-                     {msg: 'El usuario no existe'}
+                     {msg: 'El email no existe'}
                      ],title: 'Ingreso' 
                  })
 
         };
 
-        if(!(bcrypt.compareSync(req.body.password, usuarioEncontrado[0].password))) { //compara contrasenas, OJO usar [0] ya que cuando uso findAll es un array
+        if(!(bcrypt.compareSync(req.body.password, emailEncontrado[0].password))) { //compara contrasenas, OJO usar [0] ya que cuando uso findAll es un array
             res.render('users/login', {errors: 
                 [
                 {msg: 'Password Incorrecta'}
@@ -37,12 +37,12 @@ module.exports = {
             })
         };
 
-        req.session.usuario = usuarioEncontrado[0].username; //al haber declardo el middleware de applicacion session aparece el uso de req.session y yo le agrego usuario
+        req.session.email = emailEncontrado[0].email; //al haber declardo el middleware de applicacion session aparece el uso de req.session y yo le agrego usuario o email
         // entonces a partir de ahora en req.session.usuario esta el username del usuario en sesion. Ojo que nodemon al salvar algo reinicia y se cae la sesion
         
         // si remember mi esta checkeado, crear cookie. Si no esta checkeado no viene en el body rememberme y va a dar undefined. La cookie hay que mandarla al navegador por eso esta en el res
         if(req.body.rememberme){ // esto lo mismo que pregunta req.body.rememberme != undefined
-            res.cookie('recordame', usuarioEncontrado[0].username, {maxAge: 5*60*1000})   // el nombre puede ser cualquiera, guardo un dato por cookie, pero puede ser un json
+            res.cookie('recordame', emailEncontrado[0].email, {maxAge: 5*60*1000})   // el nombre puede ser cualquiera, guardo un dato por cookie, pero puede ser un json
         };                                                                           // maxAge esta en milisegundos, para que dure cinco minutos es 5*60*1000, no se borra al reiniciar sino al borrar cookies a mano
 
         
@@ -52,7 +52,7 @@ module.exports = {
         } 
 
 
-        res.redirect('/');
+        res.redirect('/paquetes');
     },
 
     register: function (req, res, next) { // formulario de registro
@@ -68,7 +68,7 @@ module.exports = {
                 req.body.password = passwordHash;                          // cambio la pass por la pass hasheada antes de guardarla en la BD
                 let newUsers = await Users.create(req.body) // para usar esto en el form deben estar los mismos nombres que en la BD
                 //await newMovie.addActores(req.body.actores)  // en el modelo movie pusimos abajo de todo el alias actores a esta relacion, pero se usa mayuscula luego del add. OJO en req.body.actores este actores es lo que viene del form definido en el controlador create de arriba
-                res.redirect('/products')    
+                res.redirect('/paquetes')    
 
             } catch (error){
                 res.send(error.message);
@@ -96,7 +96,7 @@ module.exports = {
                 id: req.params.id // ojo, si esto viene por post tengo que poner body en vez de params
                 }
                 });
-            res.redirect('/products')                
+            res.redirect('/paquetes')                
         } catch (error){
              res.send(error.message);
         }

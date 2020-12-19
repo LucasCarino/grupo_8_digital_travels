@@ -7,7 +7,7 @@
         <%- include('../partials/header__min') %>
         <main class="register__main">
             <h1 class="user-form-title">Completá tus datos</h1>
-            <form class="register__form" action="/users/register" method="POST">
+            <form class="register__form" action="/users/register" method="POST" enctype="multipart/form-data">
                 <% if (typeof errors != "undefined") { %>
                     <% errors.forEach(error => { %>
                      <p style="color: red;"><%= error.msg %> </p>
@@ -36,6 +36,10 @@
                 <div>
                     <input type="password" id="passwordcheck" name="passwordcheck" required placeholder=" ">
                     <label for="passwordcheck">Confirmar contraseña</label>
+                </div>
+                <div>
+                    <input type="file" id="image" name="image" required>
+                    <label for="image">Imagen</label>
                 </div>
                 <button type="submit" class="submit-button">Continuar</button>
             </form>
