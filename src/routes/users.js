@@ -4,6 +4,9 @@ var router = express.Router();
 const validation = require('../middlewares/validation')
 const usersController = require('../controllers/usersController');
 
+const userMiddleware = require('../middlewares/user');
+const guestMiddleware = require('../middlewares/guest');
+
 // todo esto de abajo para usar multer
 const multer = require('multer');
 const path = require('path');
@@ -22,13 +25,13 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 /* GET users listing. */
-router.get('/login', usersController.login);
-router.post('/login', usersController.loginSend);
+router.get('/login', guestMiddleware, usersController.login);
+router.post('/login', guestMiddleware, usersController.loginSend);
 
-router.get('/logout', usersController.logout); // ideal hacerlo por post desde un form
+router.get('/logout', userMiddleware, usersController.logout); // ideal hacerlo por post desde un form
 
-router.get('/register', usersController.register); // formulario de registro, valido datos del form y luego mando foto
-router.post('/register',upload.single('image'), validation.register, usersController.registerSend); //envia datos de registro
+router.get('/register', guestMiddleware, usersController.register); // formulario de registro, valido datos del form y luego mando foto
+router.post('/register', guestMiddleware, upload.single('image'), validation.register, usersController.registerSend); //envia datos de registro
 
 router.get('/carrito', usersController.cart);
 router.delete('/delete/:id', usersController.delete) // borro usuario pasando su id

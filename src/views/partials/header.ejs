@@ -33,19 +33,15 @@
             <p id="slogan">Te acompañamos desde el primer paso.</p>
 
             <div class="cta__items">
-                <% if(!email){ %>
-                <!-- usuario o email es locals.email seteado en el middle log.js, si esta vacio muestro solo ingresar y registrate -->
+                
+                <% if (!locals.user) { %>
+                <!-- locals.user seteado en el middle log.js, si esta vacio muestro solo ingresar y registrate -->
                 <a href="/users/login">Ingresar </a>
-                <% } %>
-
                 <a href="/users/register">Registrate</a>
-
-                <% if(email){ %>
-                <!-- usuario es locals.usuario seteado en el middle log.js -->
-                <p id="slogan">Bienvenido, <%= email %></p>
-                <a href="/users/logout">Salir </a>
+                <% } else { %>
+                <p id="slogan">Bienvenido, <%= locals.user.first_name %></p>
+                <a href="/users/logout">Salir </a> 
                 <% } %>
-
 
                 <a href="/users/carrito"><i class="fas fa-suitcase-rolling"></i></a>
                 <form id="darkmode__form">
@@ -90,19 +86,11 @@
         </script>
     </div>
     <div id="nav-menu-mobile">
-        <div class="nav-header-user-menu">
-            <div class="nav-header-mobile-user-info">
-                <div class="nav-user-icon"><i class="far fa-user"></i></div>
-                <div class="nav-mobile-user-welcome">
-                    <h3 class="nav-mobile-user-title">Bienvenido</h3>
-                    <p class="nav-mobile-user-text">Ingresá a tu cuenta para gestionar tu próximo viaje</p>
-                </div>
-            </div>
-            <div class="nav-mobile-user-buttons">
-                <a class="nav-mobile-button-filled" href="/users/login">Ingresá</a>
-                <a class="nav-mobile-button-outlined" href="/users/register">Creá tu cuenta</a>
-            </div>
-        </div>
+        <% if (locals.user) { %>
+            <%- include('userMenu') %> 
+        <% } else { %>
+            <%- include('guestMenu') %> 
+        <% } %>
         <div class="nav-menu-section">
             <a href="/help"><i class="far fa-question-circle"></i>Ayuda</a>
         </div>

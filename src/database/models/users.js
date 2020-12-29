@@ -1,7 +1,7 @@
 const { sequelize, DataTypes } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-    const Users = sequelize.define('Users', {
+    const User = sequelize.define('User', {
         first_name: DataTypes.STRING,
         last_name: DataTypes.STRING,
         username: DataTypes.STRING,
@@ -15,5 +15,5 @@ module.exports = (sequelize, DataTypes) => {
     // Transfer.associate = models => {
     //     Transfer.hasMany(models.Travel_package)
     // }
-    return Users;
+    return User;
 }
