@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@500&display=swap');
 
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*******************************************************************************************/
 /*************************************MOBILE FIRST******************************************/
 /*******************************************************************************************/
@@ -347,23 +355,144 @@ main {
     margin: 0px;
     text-align: center;
 }
-.promociones {
-    display: flex;
+
+.flexslider{
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+
+    position: relative;
     background-color: var(--dt-sectioncontainer1);
-    border: 1px solid var(--dt-borders);
-    flex-direction: column;
-    border-radius: 10px;
-    margin: 30px 10px;
-    margin: 10px;
-    padding: 10px;
 }
-.promociones a {
-    align-self: center;
-    padding: 10px;
-}
-.promociones img{
+
+.slides,
+.slides li,
+.slides li img{
     width: 100%;
-    border: 3px solid var(--dt-borders);
+    padding: 0;
+    margin: 0;
+}
+
+.slides li{
+	margin-bottom: -5px;
+}
+
+.flex-control-nav.flex-control-paging{
+	width: 120px;
+	padding: 30px 0px;
+	border-radius: 10px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+
+	list-style: none;
+
+	position: absolute;
+	bottom: 0px;
+	z-index: 3;
+}
+
+.flex-control-nav li{
+	display: inline-block;
+	margin: 0 5px;
+}
+
+.flex-control-nav li a{
+	display: block;
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	border-radius: 50%;
+	text-indent: -9999px;
+	box-shadow: inset 0px -3px 2px 0px rgba(0,0,0,0.55);
+	margin: 0 5px;
+}
+
+.flex-control-nav li a.flex-active{
+	background: #353535;
+}
+
+/* NAVEGACION ===============*/
+.flex-direction-nav{
+	z-index: 3;
+	list-style: none;
+}
+
+.flex-direction-nav a{
+	width: 60px;
+	height: 60px;
+
+	border-radius: 5px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	text-decoration: none;
+	opacity: 0;
+
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.flex-direction-nav a::before{
+	content: "\f104";
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-size: 50px;
+    color: #fff;
+}
+
+.flex-direction-nav a.flex-next::before{
+	content: "\f105";
+}
+
+.flex-direction-nav .flex-prev{
+	left: 0px;
+}
+
+.flex-direction-nav .flex-next{
+	right: 0px;
+}
+
+.flexslider:hover .flex-direction-nav .flex-prev{
+	opacity: 1;
+	left: 40px;
+}
+
+.flexslider:hover .flex-direction-nav .flex-next{
+	opacity: 1;
+	right: 40px;
+}
+
+/* CAPTION ==================*/
+.caption{
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	position: absolute;
+	top: 0;
+    z-index: 2;
+}
+
+.caption h2{
+	font-size: 60px;
+	color: #fff;
+	text-shadow: 3px 3px 2px rgba(000, 000, 000, 0.70);
 }
 
 /*FINANCIACIÓN*/
@@ -755,6 +884,7 @@ text-align: center;
     font-size: 16px;
     text-decoration: none;    
 }
+
 .register__form select {
     width: 100%;
     font-size: 18px;
@@ -1294,29 +1424,7 @@ text-align: center;
     .fa-search {
         color: var(--dt-whitetext);
     }
-    /*PROMOCIONES*/ 
 
-    .promociones {
-        background-color:var(--dt-sectioncontainer1);
-        padding: 0px;
-        border-radius: 0px;
-        width: 100%;
-        margin: 0px;
-        border: none;
-    }
-    .promociones a {
-        display: flex;
-        padding: 10px;
-        width: 100%;
-        border: 1px solid var(--dt-borders);
-        justify-content: center;
-    }
-    .promociones img{
-        width: 80%;
-        border: 5px solid var(--dt-whitetext);
-        box-sizing: border-box;
-        border-radius: 5px;
-    }
 
     /*FINANCIACIÓN*/
     
@@ -1347,6 +1455,19 @@ text-align: center;
     .payment a img {
         padding: 10px;
     }
+
+    
+.flexslider{
+    padding: 30px 30px 0 30px;
+}
+
+
+
+/* CAPTION ==================*/
+.caption{
+
+    border: 5px solid var(--dt-backgroundwhite);
+}
 
     /***************************************FOOTER*******************************************/
 
