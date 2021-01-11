@@ -28,6 +28,31 @@ module.exports = {
         } catch (error) {
             res.send(error.message)
             }
-        
+    },
+    detail: async (req, res) => {
+        try {
+            let product = await Travel_package.findByPk(req.params.id);
+            if(product.length > 0){
+                let respuesta = {
+                    metadata: {
+                        status: 200, //200 es OK
+                        paquetes: product.length // pasamos cantidad encontrada
+                    },
+                    product: product // aca si va la info requerida
+                }
+                res.json(respuesta); // cuando es una api no se usa render ya que no estamos renderizando una vista sino pasando la info en json para otro sistema
+            } else {
+                let errorCode = {
+                    metadata: {
+                        status: 204, //204 es NOK
+                        paquetes: 0
+                    }
+                };
+                res.json(errorCode);                   
+                }
+            
+        } catch (error) {
+            res.send(error.message)
+            }
     }
 }

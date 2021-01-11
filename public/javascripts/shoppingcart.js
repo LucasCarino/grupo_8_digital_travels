@@ -9,8 +9,15 @@ function loadStorage() {
 }
 
 let storage = loadStorage();
+let container = document.querySelector('.product__cart');
+
 storage.forEach(id => {
-    let fetchUrl = 'http://localhost:3000/api/birras/' + id;
+    let fetchUrl = 'http://localhost:3000/api/paquetes/' + id;
     fetch(fetchUrl)
     .then(data => data.json())
+    .then(paquete => 
+        container.innerHTML +=
+        )
+
 });
+

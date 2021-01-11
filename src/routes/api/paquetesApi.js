@@ -22,7 +22,7 @@ var upload = multer({ storage: storage });
 router.get('/', controller.all);
 // router.get('/create', controller.createForm);                       // llama al form de creacion
 // router.post('/create', upload.single('image'), controller.create);  // recibe datos del form de creacion
-// router.get('/:id', controller.detail);
+router.get('/:id', controller.detail);
 // router.get('/edit/:id', controller.editForm);                       // llama al form de edicion
 // router.post('/edit/:id', upload.single('image'), controller.edit);  // recibe datos del form de edicion
 // router.get('/search', controller.search);
