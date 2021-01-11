@@ -38,7 +38,8 @@ module.exports = {
                         status: 200, //200 es OK
                         paquetes: product.length // pasamos cantidad encontrada
                     },
-                    product: product // aca si va la info requerida
+                    product: product
+                     // aca si va la info requerida
                 }
                 res.json(respuesta); // cuando es una api no se usa render ya que no estamos renderizando una vista sino pasando la info en json para otro sistema
             } else {
