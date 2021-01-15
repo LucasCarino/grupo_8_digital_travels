@@ -3,7 +3,7 @@ const pathArray = window.location.pathname.split('/');
 const id = pathArray[pathArray.length -1];
 
 function loadStorage() {
-    let storage = localStorage.getItem('shoppingCart');
+    let storage = localStorage.getItem('packageCart');
     if (storage == null) {
         storage = [];
     } else {
