@@ -16,16 +16,16 @@ function addShoppingCart(selectedId, e) {
     let storage = loadStorage();
     if (!storage.includes(selectedId)) {
         let newStorage = JSON.stringify([...storage, selectedId]);
-        localStorage.setItem('shoppingCart', newStorage);
+        localStorage.setItem('packageCart', newStorage);
         e.target.innerText = 'Quitar de mis viajes';
     } else {
         storage = storage.filter(item => item != selectedId);
         e.target.innerText = 'Añadir a mis viajes';
-        localStorage.setItem('shoppingCart', JSON.stringify(storage))
+        localStorage.setItem('packageCart', JSON.stringify(storage))
     }
 }
 
-const shoppingCart = 
+const packageCart = 
 addButton.addEventListener('click', (e) => {
     e.preventDefault();
     addShoppingCart(id, e);

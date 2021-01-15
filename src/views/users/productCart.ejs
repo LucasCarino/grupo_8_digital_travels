@@ -2,7 +2,6 @@
 <html lang="en">
 
 <%- include('../partials/head') %>
-<script src="/javascript/shoppingcart" defer"></script>
 
 <body>
     <div class="container">
@@ -10,33 +9,15 @@
         <main class="productcart__main">
             <h2 class="section__title">Resumen de mis viajes</h2>
             <section class="product__cart">
-                <article>
-                    <div class="cart__img">
-                        <img src="/img/promo1.jpg" alt="destino">
-                    </div>
-                    <div class="cart__desc">
-                        <h3>Producto</h3>
-                        <p>Lorem ipsum dolor sit amet lias, numquam sunt velit explicabo quos accusamus facilis
-                            blanditiis dolor dolore, provident id nam. Quae, debitis.</p>
-                        <h4>$ XXXXX por persona</h4>
-                        <div class="cart__semitotal">
-                            <i class="fas fa-user"></i>
-                            <select name="personas">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                            <h4>Total $ XXXXX</h4>
-                        </div>
-                    </div>
-                </article>
-                <h3>Total $ XXXXX</h3>
-                <button class="search__button">comprar ahora</button>
+
             </section>
+            <h3>Total $ XXXXX</h3>
+            <button class="search__button">comprar ahora</button>
         </main>
         <%- include('../partials/footer__min') %>
     </div>
+    <script src="/javascripts/shoppingcart.js" defer"></script>
 </body>
+
 
 </html>

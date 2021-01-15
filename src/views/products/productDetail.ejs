@@ -2,7 +2,6 @@
 <html lang="en">
 
 <%- include('../partials/head') %>
-<script src="/javascripts/detail.js" defer></script>
 
 <body>
     <div class="container">
@@ -13,14 +12,11 @@
                 <h2 class="section__title"><%= product.name %></h2>
                 <article class="productdetail__article">
                     <div class="detail__img">
-                        <img src="/img/img_travels/<%= product.Hotel.image %>" alt="destino">
+                        <img src="/img/img_travels/<%= product.image %>" alt="imagen">
                     </div>
                     <div class="productdetail__desc">
                         <ul>
-                            <h2>Hotel: <%= product.Hotel.name %></h2>
-                            <li><%= product.Hotel.description %></li>
-                            <li>Noches: <%= product.total_nights %></li>
-                            <li>Incluye: <%= product.Transfer.name %> y Excursion <%= product.Excursion.name %> </li>
+                            <li><%= product.description %></li>                            
                         </ul>
                         <h4>$<%= product.price %> por persona</h4>
                         <div class="cart__semitotal">
@@ -33,16 +29,17 @@
                             </select>
                         </div>
                         <a href="#" id="shoppingcart"><button>Añadir a Mis Viajes</button></a>
-                        <a href="/paquetes/delete/<%= product.id %>"><button>Eliminar</button></a>
-                        <a href="/paquetes/edit/<%= product.id %>"><button>Editar</button></a>
+                        <a href="/<%= type %>/delete/<%= product.id %>"><button>Eliminar</button></a>
+                        <a href="/<%= type %>/edit/<%= product.id %>"><button>Editar</button></a>
                     </div>
                 </article>
-                <a href="/paquetes">Volver al listado</a>
+                <a href="/<%= type %>">Volver al listado</a>
             </section>
         </main>
         <%- include('../partials/footer') %>
 
     </div>
+    <script scr="/javascripts/detail.js" defer></script>
 </body>
 
-</html>
+</html> 
