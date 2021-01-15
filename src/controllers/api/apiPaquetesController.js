@@ -32,7 +32,7 @@ module.exports = {
     detail: async (req, res) => {
         try {
             let product = await Travel_package.findByPk(req.params.id);
-            if(product.length > 0){
+            if(product){
                 let respuesta = {
                     metadata: {
                         status: 200, //200 es OK
