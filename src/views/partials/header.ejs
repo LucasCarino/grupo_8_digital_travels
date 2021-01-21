@@ -39,11 +39,11 @@
                 <a href="/users/login">Ingresar </a>
                 <a href="/users/register">Registrate</a>
                 <% } else { %>
-                <p id="slogan">Bienvenido, <%= locals.user.first_name %></p>
-                <a href="/users/logout">Salir </a> 
+                    <p id="slogan">Bienvenido, <%= locals.user.first_name %></p>
+                    <a href="/users/logout">Salir </a> 
+                    <a href="/users/carrito"><i class="fas fa-suitcase-rolling"></i></a>
                 <% } %>
-
-                <a href="/users/carrito"><i class="fas fa-suitcase-rolling"></i></a>
+                
                 <form id="darkmode__form">
                     <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch" value="on"
                         onclick="document.documentElement.classList.toggle('dark-mode')">

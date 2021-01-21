@@ -1272,6 +1272,7 @@ text-align: center;
         color: var(--dt-blacktext);
         padding: 2vh;
         border-radius: 0px;
+        width: 100%;
     }
     .search__form {
         display: flex;
@@ -1655,37 +1656,49 @@ text-align: center;
         background-color: var(--dt-background);
     }
 
-    .cart__semitotal{
-        padding-bottom: 0vh;
+    .list__services {
+        display: flex;
+        width: 100%;
+        text-decoration: none;
+        list-style-type: none;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 0;
     }
-    .cart__semitotal a{
-        width: auto;
+    .list__services li {
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 3vh 5%;
+        background-color: var(--dt-sectioncontainer1);
+        display: flex;
     }
 
-    .cart__semitotal h4 {
-        margin: 1vh 0;
+    .list__services li a {
+        display: flex;
+        text-decoration: none;
+        color: var(--dt-whitetext);
     }
-
-    .product__desc h4 {
-        margin: 1vh 0;
+    
+    .list__services li:hover {
+        transform: scale(1.05);
     }
-
+    
     /**************************************************************************************/
     /*********************************PRODUCT DETAIL***************************************/
     /**************************************************************************************/
-
+    
     .productdetail__article {
     flex-direction: row;
     align-items: center;
     border-bottom: 1px solid var(--dt-borders);
     border-radius: 0px;
     margin: 0;
-    }
+}
 
     .productdetail__section {
         background-color: var(--dt-sectioncontainer1);
     }
-
+    
     .productdetail__article {
         background-color: var(--dt-background);
         margin: 10px;
@@ -1714,12 +1727,12 @@ text-align: center;
         width: 100%;
         font-size: 14px;
     }
-
+    
     .productdetail__desc button {
         margin: 1vh 0;
         width: 50%;
     }
-
+    
     .productdetail__desc button:hover {
         background-color: var(--dt-decoration1);
         color: var(--dt-whitetext);
@@ -1732,9 +1745,9 @@ text-align: center;
     /**************************************************************************************/
     /******************************FORMULARIO DE REGISTRO**********************************/
     /**************************************************************************************/
-
+    
     /****************************************MAIN******************************************/
-
+    
     .login__main {
         display: flex;
         flex-direction: column;
@@ -1745,7 +1758,7 @@ text-align: center;
         margin: 3vh 0;
         background-color: var(--dt-white);
     }
-
+    
     .register__main {
         display: flex;
         flex-direction: column;
@@ -1756,22 +1769,22 @@ text-align: center;
         margin: 3vh 0;
         background-color: var(--dt-white);
     }
-
-
+    
+    
     /**************************************************************************************/
     /***********************************CARRITO DE COMPRAS*********************************/
     /**************************************************************************************/
-
+    
     /****************************************MAIN******************************************/
-
+    
     .productcart__main {
         width: 85%;
     }
-
+    
     .product__cart {
         margin: 0px;
     }
-
+    
     .cart__desc h3 {
         font-size: 1.1em;
         color: var(--dt-blacktext)
@@ -1780,19 +1793,49 @@ text-align: center;
         font-size: 1em;
         margin-top: 4.5vh;
     }
-
+    
     .cart__desc p {
         font-size: 14px;
         color: var(--dt-blacktext);
     }
-
+    
     .fa-user {
         color: var(--dt-blacktext);
+    }
+    .cart__buynow {
+        background-color: var(--dt-sectioncontainer2);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-bottom: 2vh;
+    }
+    
+    .cart__buynow h3 {
+        background-color: white;
+        padding: 5px;
+        border-radius: 3px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    .cart__semitotal{
+        padding-bottom: 0vh;
+    }
+    
+    .cart__semitotal a{
+        width: auto;
+    }
+    
+    .cart__semitotal h4 {
+        margin: 1vh 0;
+    }
+    
+    .product__desc h4 {
+        margin: 1vh 0;
     }
     /**************************************************************************************/
     /************************************PAGINA DE ERROR***********************************/
     /**************************************************************************************/
-
+    
     /****************************************MAIN******************************************/
     
     .error__page a:hover {

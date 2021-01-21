@@ -22,7 +22,7 @@ module.exports = {
                 user = user.dataValues;
                 if (!bcrypt.compareSync(req.body.password, user.password)) {
                     error.password = 'Revisá tu contraseña'
-                    res.render('login', {old, error});
+                    res.render('/users/login', {old, error});
                 } else {
                     req.session.user = user;
                     if (req.body.rememberme) {
@@ -36,7 +36,7 @@ module.exports = {
                 } 
             } else {
                 error.user = 'Revisá tu email o usuario'
-                res.render('login', {old, error});
+                res.render('users/login', {title: 'Credencial incorrecta', old, error});
             }
             
         } catch (error) {
