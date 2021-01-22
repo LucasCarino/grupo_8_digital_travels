@@ -23,16 +23,20 @@
                             <li>Incluye: <%= package.Transfer.name %> y Excursion <%= package.Excursion.name %> </li>
                         </ul>
                         <h4>$<%= package.price %> por persona</h4>
-                        <div class="cart__semitotal">
-                            <i class="fas fa-user"></i>
-                            <select name="personas">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div>
-                        <a href="#" id="shoppingcart"><button>Añadir a Mis Viajes</button></a>
+                        <form action="/users/addToCart" method="POST">
+                            <div class="cart__semitotal">
+                                <i class="fas fa-user"></i>
+                                <select name="personas">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <input type="hidden" name="type" value="paquetes">
+                                <input type="hidden" name="id" value="<%= product.id %>">
+                            </div>
+                            <button type="submit">Añadir a Mis Viajes</button>
+                        </form>
                         <a href="/paquetes/delete/<%= package.id %>"><button>Eliminar</button></a>
                         <a href="/paquetes/edit/<%= package.id %>"><button>Editar</button></a>
                     </div>

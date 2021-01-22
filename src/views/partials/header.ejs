@@ -6,7 +6,9 @@
         </a>
         <div class="menuicon">
             <i class="fas fa-user" id="accounticon" onclick="navDisplay(this)"></i>
-            <a href="/users/carrito" id="navcart"><i class="fas fa-suitcase-rolling"></i></a>
+            <% if (locals.user) { %>
+                <a href="/users/carrito" id="navcart"><i class="fas fa-suitcase-rolling"></i></a>            
+            <% } %>
             <form id="darkmode__form">
                 <input id="dark-mode" class="toggle" type="checkbox" name="Dark mode" role="switch" value="on"
                     onclick="document.documentElement.classList.toggle('dark-mode')">

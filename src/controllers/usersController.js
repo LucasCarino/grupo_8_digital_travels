@@ -3,12 +3,73 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');                         // para encriptar pass
 const crypto = require('crypto');
-const { User, Token } = require('../database/models');              // llamo a base de datos Users
+const { User, Token, Cart } = require('../database/models');              // llamo a base de datos Users
 const {Op} = require('sequelize');                          // para poder usar operadores logicos como OR
 
 module.exports = {
-    cart: function(req, res, next){
-        res.render('users/productCart', { title: 'Mis Viajes' })
+    cart: async function(req, res, next){
+        try {
+            const cart = await Cart.findAll({
+                where: {state: 1, userId: req.session.user.id},
+                include: {all: true}
+            });
+            let carrito = cart.map(item => item.toJSON());
+            let total = 0
+            carrito.forEach(item => {                
+                if (item.Travel_package) {
+                    item.product = item.Travel_package
+                }
+                if (item.Hotel) {
+                    item.product = item.Hotel
+                }
+                if (item.Transfer) {
+                    item.product = item.Transfer
+                }
+                if (item.Excursion) {
+                    item.product = item.Excursion
+                }
+                total = total + item.passengers * item.product.price
+            });
+            res.render('users/productCart', { title: 'Mis Viajes', carrito, total })
+        } catch (error) {
+            res.send(error)
+        }
+        
+    },
+    addToCart: async function(req, res) {
+        let item = {}
+        switch (req.body.type) {
+            case 'paquetes':
+                item = {
+                    user_id: req.session.user.id,
+                    travel_package_id: req.body.id,
+                    passengers: req.body.personas
+                }
+                break;
+            case 'hoteles':
+                item = {
+                    user_id: req.session.user.id,
+                    hotel_id: req.body.id,
+                    passengers: req.body.personas
+                }
+                break;
+            case 'traslados':
+                item = {
+                    user_id: req.session.user.id,
+                    transfer_id: req.body.id,
+                    passengers: req.body.personas
+                }
+                break;
+            case 'excursiones':
+                item = {
+                    user_id: req.session.user.id,
+                    excursion_id: req.body.id,
+                    passengers: req.body.personas
+                }
+                break;
+        }
+        await Cart.create(item);
+        res.redirect('/users/carrito');
     },
     login: function (req, res, next) { // formulario de login
         res.render('users/login', { title: 'Ingreso' });
@@ -56,7 +117,6 @@ module.exports = {
                 let passwordHash = bcrypt.hashSync(req.body.password, 10); // se encripta la pass, el 10 es la sal que dice cuanto se complejiza                
                 req.body.password = passwordHash;                          // cambio la pass por la pass hasheada antes de guardarla en la BD
                 await User.create(req.body) // para usar esto en el form deben estar los mismos nombres que en la BD
-                //await newMovie.addActores(req.body.actores)  // en el modelo movie pusimos abajo de todo el alias actores a esta relacion, pero se usa mayuscula luego del add. OJO en req.body.actores este actores es lo que viene del form definido en el controlador create de arriba
                 res.redirect('/paquetes')    
 
             } catch (error){

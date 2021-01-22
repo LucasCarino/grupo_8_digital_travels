@@ -42,5 +42,7 @@ router.get('/detail/:id', usersController.showOne); // muestra detalles de un so
 router.get('/update/:id', usersController.updateForm); // edita un usuario
 router.put('/update/:id', usersController.update); // recibe datos de edicion del usuario
 
+router.post('/addToCart', usersController.addToCart);
+
 
 module.exports = router;
