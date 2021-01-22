@@ -193,6 +193,16 @@ module.exports = {
             res.send(error.message); 
 
         }
+    }, 
+    deleteFromCart: async (req, res) => {
+        Cart.destroy({
+            where: {
+                id : req.body.itemId,
+                user_id : req.session.user.id
+            }
+        })
+        .then(()=> res.redirect('/users/carrito'))
+        .catch(error => console.log(error))
     }
 }
 
