@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         username: DataTypes.STRING,
         email: DataTypes.STRING,
         password: DataTypes.STRING,
+        admin: DataTypes.INTEGER
     }
     ,{
         //timestamps: false, // para poner si no existen los time stamps para que no chille sequelize.NO anda soft delete si esta en false
