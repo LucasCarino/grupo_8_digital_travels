@@ -193,6 +193,9 @@ module.exports = {
             res.send(error.message); 
 
         }
+    },
+    admin: (req, res) => {
+        res.render('dashboard');
     }
 }
 
