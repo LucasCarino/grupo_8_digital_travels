@@ -55,5 +55,12 @@ module.exports = {
         } catch (error) {
             res.send(error.message)
             }
+    },
+    last: async (req, res) => {
+        try {
+            let product = await Travel_package.findOne;
+        } catch (error) {
+            res.send(error.message)
+        }
     }
 }
