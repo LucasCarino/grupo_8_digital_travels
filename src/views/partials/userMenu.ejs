@@ -6,7 +6,8 @@
             <div class="nav-user-icon"><i class="far fa-user"></i></div>
         <% } %>
         <div class="nav-mobile-user-welcome">
-            <h3 class="nav-mobile-user-title">Hola <%= locals.user.first_name %></h3>
+            <h3 class="nav-mobile-user-title">Bienvenido, <%= locals.user.first_name %></h3>
+            <a class="nav-mobile-button-filled" href="/users/logout">Salir</a>
         </div>                
     </div>
 </div>

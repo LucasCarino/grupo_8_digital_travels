@@ -2,7 +2,6 @@
 <html lang="en">
 
 <%- include('../partials/head') %>
-<script src="/javascripts/detail.js" defer></script>
 
 <body>
     <div class="container">
@@ -35,10 +34,15 @@
                                 <input type="hidden" name="type" value="paquetes">
                                 <input type="hidden" name="id" value="<%= package.id %>">
                             </div>
-                            <button type="submit">Añadir a Mis Viajes</button>
-                        </form>
-                        <a href="/paquetes/delete/<%= package.id %>"><button>Eliminar</button></a>
-                        <a href="/paquetes/edit/<%= package.id %>"><button>Editar</button></a>
+                            <% if (locals.user) { %>
+                                <button type="submit">Añadir a Mis Viajes</button>
+                                <a href="/paquetes/delete/<%= package.id %>"><button>Eliminar</button></a>
+                                <a href="/paquetes/edit/<%= package.id %>"><button>Editar</button></a>
+                            </form>
+                           <% } else { %>
+                            </form>
+                        <a href="/users/login"><button>Añadir a Mis Viajes</button></a>
+                            <% } %>
                     </div>
                 </article>
                 <a href="/paquetes">Volver al listado</a>

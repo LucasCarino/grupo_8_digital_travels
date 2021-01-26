@@ -25,17 +25,7 @@
                                 </div>
                                 <p><%= item.product.description %></p>
                                     <h4 id="price__value"><%= item.product.price %> ARS Por persona</h4>
-                                    <div class="cart__semitotal">
-                                    <i class="fas fa-user"></i>
-                                    <select id="select__value"name="personas" onchange="getPrice();">
-                                        <% for( let i = 1; i <= 4; i++ ) { %>
-                                            <% if (i == item.passengers) { %>
-                                                <option selected value="<%= i %>"><%= i %></option>
-                                            <% } else { %>                                         
-                                                <option value="<%= i %>"><%= i %></option>
-                                            <% } %>
-                                        <% } %>
-                                    </select>
+                                <div class="cart__semitotal">
                                     <h4 id="total__result">Total $ <%= item.product.price * item.passengers %></h4>
                                 </div>
                             </div>
