@@ -112,7 +112,6 @@ module.exports = {
 
     registerSend: async (req, res) => { // recibo datos del form de registro, se crea el usuario nuevo
         const errors = validationResult(req);
-        console.log(errors.mapped());
         if(errors.isEmpty()){ // lo de aca abajo es lo que se hace si no hay errores   
             try {
                 //console.log(req.body)  //  para ver que llega
