@@ -45,7 +45,8 @@ module.exports = {
     edit: async (req, res) => {
         try {
             let product = await Transfer.findByPk(req.params.id)
-            let editProduct = {}
+            let editProduct = {};
+            let imageDir = '/img/img_travels';
             if (typeof req.body.image === 'undefined') {
                 editProduct = {
                     ...req.body,

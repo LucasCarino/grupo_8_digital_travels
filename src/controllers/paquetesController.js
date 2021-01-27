@@ -58,6 +58,7 @@ module.exports = {
         try {
             let product = await Travel_package.findByPk(req.params.id)
             let editProduct = {}
+            let imageDir = '/img/img_travels';
             if (typeof req.body.image === 'undefined') {
                 editProduct = {
                     ...req.body,
