@@ -45,6 +45,6 @@ router.put('/update/:id', usersController.update); // recibe datos de edicion de
 
 router.post('/addToCart', usersController.addToCart);
 router.get('/admin', adminMiddleware, usersController.admin);
-
+router.post('/deleteFromCart', usersController.deleteFromCart);
 
 module.exports = router;

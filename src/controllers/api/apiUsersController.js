@@ -5,7 +5,6 @@ module.exports = {
     all: async (req, res) => {
         try {
             let users = await User.findAll();
-
             if(users.length > 0){
                 let respuesta = {
                     metadata: {
@@ -24,11 +23,9 @@ module.exports = {
                 };
                 res.json(errorCode);                   
                 }
-
         } catch (error) {
             res.send(error.message)
             }
-
     },
     detail: async (req, res) => {
         try {
@@ -51,7 +48,6 @@ module.exports = {
                 };
                 res.json(errorCode);                   
                 }
-
         } catch (error) {
             res.send(error.message)
             }
@@ -59,4 +55,4 @@ module.exports = {
     current: (req, res) => {
         res.locals.user ? res.send(res.locals.user) : res.send(null)
     }
-} 
+}

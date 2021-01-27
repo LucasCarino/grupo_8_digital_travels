@@ -8,6 +8,9 @@
         <%- include('../partials/header__min') %>
         <main class="login__main">
             <h1 class="user-form-title">¡Hola! Ingresá tu Email</h1>
+            <% if (typeof error != "undefined") { %>
+                 <p style="color: red;"><%= error.msg %> </p>
+            <% } %>
             <form class="register__form" action="/users/login" method="POST">
                 <% if (typeof error != 'undefined') { %>
                     <p style="color: red;"><%= error %></p>
@@ -24,7 +27,7 @@
                     <input id="rememberme" name="rememberme" value="remember" type="checkbox">Recuérdame
                 </div>
                 <button type="submit" class="submit-button">Ingresá</button>
-                <a href="/passwword-recover">¿Olvidaste tu contraseña?</a>
+                <a href="/password-recover">¿Olvidaste tu contraseña?</a>
                 <a href="/users/register">Regístrate</a>
             </form>
         </main>

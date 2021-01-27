@@ -7,41 +7,44 @@
     <div class="container">
         <%- include('../partials/header__min') %>
         <main class="productcart__main">
-            <h2 class="section__title">Resumen de mis viajes</h2>
-            <section class="product__cart">
-                <% carrito.forEach(item => { %>
-                    <article>
-                        <div class="cart__img">
-                            <img src="/img/img_travels/<%= item.product.image %>" alt="destino">
-                        </div>
-                        <div class="cart__desc">
-                            <h3><%= item.product.name %></h3>
-                            <p><%= item.product.description %></p>
-                                <h4><%= item.product.price %> ARS Por persona</h4>
+            <% if (carrito.length != 0) { %>
+                <h2 class="section__title">Resumen de mis viajes</h2>
+                <section class="product__cart">
+                    <% carrito.forEach(item => { %>
+                        <article>
+                            <div class="cart__img">
+                                <img src="/img/img_travels/<%= item.product.image %>" alt="destino">
+                            </div>
+                            <div class="cart__desc">
+                                <div>
+                                <h3><%= item.product.name %></h3>
+                                <form action="/users/deleteFromCart" method="POST">
+                                    <input type="hidden" name="itemId" value="<%= item.id %>">
+                                    <button type="submit"><i class="far fa-trash-alt"></i></button>
+                                 </form>
+                                </div>
+                                <p><%= item.product.description %></p>
+                                    <h4 id="price__value"><%= item.product.price %> ARS Por persona</h4>
                                 <div class="cart__semitotal">
-                                <i class="fas fa-user"></i>
-                                <select name="personas">
-                                    <% for( let i = 1; i <= 4; i++ ) { %>
-                                        <% if (i == item.passengers) { %>
-                                            <option selected value="<%= i %>"><%= i %></option>
-                                        <% } else { %>                                         
-                                            <option value="<%= i %>"><%= i %></option>
-                                        <% } %>
-                                    
-                                    <% } %>
-                                </select>
-                                <h4>Total $ <%= item.product.price * item.passengers %></h4>
+                                    <h4 id="total__result">Total $ <%= item.product.price * item.passengers %></h4>
+                                </div>
+                            </div>
+                        </article>                 
+                        <% }) %>
+                        <div class="cart__semitotal">
+                            <div class="cart__buynow">
+                                <h3>Total $ <%= total %></h3>
+                                <button class="search__button">comprar ahora</button>
                             </div>
                         </div>
-                    </article>                 
-                <% }) %>
-            </section>
-            <div class="cart__semitotal">
-                <div class="cart__buynow">
-                    <h3>Total $ <%= total %></h3>
-                    <button class="search__button">comprar ahora</button>
-                </div>
-            </div>
+                    </section>
+                <% } else { %>
+                <h2 class="section__title"> <%= locals.user.first_name %> ¿ya elegiste tu próximo destino?</h2>
+                <section class="null__cart"
+                    <h3>Encontrá todo lo que necesitás para tu nueva aventura.</h3>
+                    <a href="/paquetes">Planeá tu viaje</a>
+                </section>
+                <% } %>
         </main>
         <%- include('../partials/footer__min') %>
     </div>

@@ -82,8 +82,8 @@ module.exports = {
             if (user) {
                 user = user.dataValues;
                 if (!bcrypt.compareSync(req.body.password, user.password)) {
-                    error = 'Revisá tu contraseña'
-                    res.render('/users/login', {old, error});
+                    error.msg = 'Revisá tu contraseña';
+                    res.render('users/login', {title: error.msg, old, error});
                 } else {
                     req.session.user = user;
                     if (req.body.rememberme) {
@@ -198,7 +198,15 @@ module.exports = {
     },
     admin: (req, res) => {
         res.render('dashboard');
+    }, 
+    deleteFromCart: async (req, res) => {
+        Cart.destroy({
+            where: {
+                id : req.body.itemId,
+                user_id : req.session.user.id
+            }
+        })
+        .then(()=> res.redirect('/users/carrito'))
+        .catch(error => console.log(error))
     }
 }
-
-
