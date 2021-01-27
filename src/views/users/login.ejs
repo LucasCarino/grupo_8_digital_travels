@@ -9,13 +9,11 @@
         <main class="login__main">
             <h1 class="user-form-title">¡Hola! Ingresá tu Email</h1>
             <form class="register__form" action="/users/login" method="POST">
-                <% if (typeof errors != "undefined") { %>
-                    <% errors.forEach(error => { %>
-                     <p style="color: red;"><%= error.msg %> </p>
-                    <% }) %>
+                <% if (typeof error != 'undefined') { %>
+                    <p style="color: red;"><%= error %></p>
                 <% } %>
                 <div>
-                    <input type="text" name="email" id="email" required placeholder=" ">
+                    <input type="text" name="email" id="email" required placeholder=" " <% if (typeof old != 'undefined') { %>value="<%= old.email %>"<% } %> >
                     <label for="email">Email</label>
                 </div>
                 <div>
