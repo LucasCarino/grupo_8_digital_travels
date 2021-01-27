@@ -36,10 +36,10 @@
                             </div>
                             <% if (locals.user) { %>
                                 <button type="submit">Añadir a Mis Viajes</button>
+                            </form>
                                 <a href="/paquetes/delete/<%= package.id %>"><button>Eliminar</button></a>
                                 <a href="/paquetes/edit/<%= package.id %>"><button>Editar</button></a>
-                            </form>
-                           <% } else { %>
+                                <% } else { %>
                             </form>
                         <a href="/users/login"><button>Añadir a Mis Viajes</button></a>
                             <% } %>

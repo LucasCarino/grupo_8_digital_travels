@@ -1,5 +1,7 @@
 const {Travel_package, Hotel, Excursion, Transfer} = require('../database/models');
 const {Op} = require('sequelize');      
+const fs = require('fs'); 
+const path = require('path');
 
 module.exports = {
     all: async (req, res) => {
