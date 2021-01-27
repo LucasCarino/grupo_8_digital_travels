@@ -1,15 +1,11 @@
 const { User } = require('../../database/models');
 const { Op } = require('sequelize');
 
-
-
-
 module.exports = {
     all: async (req, res) => {
         try {
             let users = await User.findAll();
-
-            if(products.length > 0){
+            if(users.length > 0){
                 let respuesta = {
                     metadata: {
                         status: 200, 
@@ -27,11 +23,9 @@ module.exports = {
                 };
                 res.json(errorCode);                   
                 }
-            
         } catch (error) {
             res.send(error.message)
             }
-        
     },
     detail: async (req, res) => {
         try {
@@ -54,9 +48,11 @@ module.exports = {
                 };
                 res.json(errorCode);                   
                 }
-            
         } catch (error) {
             res.send(error.message)
             }
-        }
+    },
+    current: (req, res) => {
+        res.locals.user ? res.send(res.locals.user) : res.send(null)
+    }
 }

@@ -77,7 +77,7 @@ module.exports = {
     loginSend: async (req, res) => { 
         try {
             let old = req.body;
-            let error = {};
+            let error = '';
             let user = await User.findOne({where: {email: req.body.email}});
             if (user) {
                 user = user.dataValues;
@@ -96,8 +96,8 @@ module.exports = {
                     res.redirect('/');
                 } 
             } else {
-                error.msg = 'Revisá tu email o usuario';
-                res.render('users/login', {title: error.msg, old, error});
+                error = 'Revisá tu email'
+                res.render('users/login', {title: 'Credencial incorrecta', old, error});
             }
             
         } catch (error) {
@@ -105,12 +105,14 @@ module.exports = {
         }
     },
 
-    register: function (req, res, next) { // formulario de registro
-        res.render('users/register', { title: 'Registrate' });
+    register: function (req, res) { // formulario de registro
+        old = {}
+        res.render('users/register', { title: 'Registrate', old });
     },
 
     registerSend: async (req, res) => { // recibo datos del form de registro, se crea el usuario nuevo
         const errors = validationResult(req);
+        console.log(errors.mapped());
         if(errors.isEmpty()){ // lo de aca abajo es lo que se hace si no hay errores   
             try {
                 //console.log(req.body)  //  para ver que llega
@@ -124,8 +126,8 @@ module.exports = {
             };
     
         } else {
-            console.log("hay error");
-            res.render('users/register', { title: 'Registrate', errors: errors.array() }); 
+            old = req.body
+            res.render('users/register', { title: 'Registrate', errors: errors.array(), old }); 
             // si hay error los muestro
             }
 
@@ -193,6 +195,9 @@ module.exports = {
             res.send(error.message); 
 
         }
+    },
+    admin: (req, res) => {
+        res.render('dashboard');
     }, 
     deleteFromCart: async (req, res) => {
         Cart.destroy({
@@ -205,5 +210,3 @@ module.exports = {
         .catch(error => console.log(error))
     }
 }
-
-

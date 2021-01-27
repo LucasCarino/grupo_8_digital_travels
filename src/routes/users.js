@@ -6,6 +6,7 @@ const usersController = require('../controllers/usersController');
 
 const userMiddleware = require('../middlewares/user');
 const guestMiddleware = require('../middlewares/guest');
+const adminMiddleware = require('../middlewares/admin');
 
 // todo esto de abajo para usar multer
 const multer = require('multer');
@@ -43,7 +44,7 @@ router.get('/update/:id', usersController.updateForm); // edita un usuario
 router.put('/update/:id', usersController.update); // recibe datos de edicion del usuario
 
 router.post('/addToCart', usersController.addToCart);
+router.get('/admin', adminMiddleware, usersController.admin);
 router.post('/deleteFromCart', usersController.deleteFromCart);
-
 
 module.exports = router;

@@ -1,8 +1,5 @@
 // esto es como un controller pero para Axios
 
-const {Travel_package, Hotel, Excursion, Transfer} = require('../database/models');
-const {Op} = require('sequelize'); 
-
 const axios = require('axios');  
 const {url,timeout} = require('./defaults'); //const {url,timeout} = requiere ... 
 

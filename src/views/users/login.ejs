@@ -12,8 +12,11 @@
                  <p style="color: red;"><%= error.msg %> </p>
             <% } %>
             <form class="register__form" action="/users/login" method="POST">
+                <% if (typeof error != 'undefined') { %>
+                    <p style="color: red;"><%= error %></p>
+                <% } %>
                 <div>
-                    <input type="text" name="email" id="email" required placeholder=" ">
+                    <input type="text" name="email" id="email" required placeholder=" " <% if (typeof old != 'undefined') { %>value="<%= old.email %>"<% } %> >
                     <label for="email">Email</label>
                 </div>
                 <div>

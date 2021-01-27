@@ -14,23 +14,23 @@
                     <% }) %>
                 <% } %>
                 <div>
-                    <input type="text" name="first_name" id="first_name" required placeholder=" ">
-                    <label for="first_name">Nombre</label>
+                    <input type="text" name="first_name" id="first_name" required placeholder=" " value="<%= old.first_name %>">
+                    <label for="first_name">Nombre</label>                    
                 </div>
                 <div>
-                    <input type="text" id="last_name" name="last_name" required placeholder=" ">
+                    <input type="text" id="last_name" name="last_name" required placeholder=" " value="<%= old.last_name %>">
                     <label for="last_name">Apellido</label>
                 </div>
                 <div>
-                    <input type="text" id="username" name="username" required placeholder=" ">
+                    <input type="text" id="username" name="username" required placeholder=" " value="<%= old.username %>">
                     <label for="username">Nombre de usuari@</label>
                 </div>
                 <div>
-                    <input type="email" id="email" name="email" required placeholder=" ">    <!--  -->
+                    <input type="email" id="email" name="email" required placeholder=" " value="<%= old.email %>">
                     <label for="email">E-mail</label>
                 </div>               
                 <div>
-                    <input type="password" id="password" name="password" required placeholder=" "> <!--  -->
+                    <input type="password" id="password" name="password" required placeholder=" " value="<%= old.password %>">
                     <label for="password">Contraseña</label>
                 </div>
                 <div>

@@ -4,11 +4,9 @@ const { User, Token } = require('../database/models');
 
 module.exports = async (req, res, next) => {
     res.locals.user = false; //locals es una variable que se puede llamar desde cualquier vista sin pasarla en el render. 
-    console.log('paso por aca');
     try {
         if (req.session.user) {
             res.locals.user = req.session.user; // si hay session pongo en locals la info del usuario
-            console.log('estoy logueado!');
             return next();
         } else if (req.cookies.userToken) {  // si no hay sesión pero tengo la cookie de token, utilizo el token para buscar al usuario, y llevarlo a locals
             let token = await Token.findOne({where: {token: req.cookies.userToken}});
