@@ -31,14 +31,11 @@
                                 <input type="hidden" name="type" value="<%= type %>">
                                 <input type="hidden" name="id" value="<%= product.id %>">
                             </div>
+                            <button type="submit">Añadir a Mis Viajes</button>
+                        </form>
                             <% if (locals.user) { %>
-                                <button type="submit">Añadir a Mis Viajes</button>
-                                <a href="/paquetes/delete/<%= product.id %>"><button>Eliminar</button></a>
-                                <a href="/paquetes/edit/<%= product.id %>"><button>Editar</button></a>
-                            </form>
-                           <% } else { %>
-                            </form>
-                        <a href="/users/login"><button>Añadir a Mis Viajes</button></a>
+                                <a href="/<%= type %>/delete/<%= product.id %>"><button>Eliminar</button></a>
+                                <a href="/<%= type %>/edit/<%= product.id %>"><button>Editar</button></a>
                             <% } %>
                     </div>
                 </article>

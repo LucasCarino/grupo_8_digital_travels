@@ -1,5 +1,7 @@
 const { Transfer } = require('../database/models');
 const { Op } = require('sequelize');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     all: async (req, res) => {
@@ -54,12 +56,14 @@ module.exports = {
                 };
             } else {
                 editProduct = req.body
-                fs.unlink(path.join(imageDir, product.image), (err) => {
-                    if (err) {
-                        console.error(err);
-                        return
-                    }
-                });
+                if (product.image) {
+                    fs.unlink(path.join(imageDir, product.image), (err) => {
+                        if (err) {
+                            console.error(err);
+                            return
+                        }
+                    });
+                }
             }
             await product.update(editProduct);
             res.redirect('/traslados');

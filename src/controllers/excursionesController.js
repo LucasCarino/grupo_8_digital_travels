@@ -1,5 +1,7 @@
 const { Excursion } = require('../database/models');
 const { Op } = require('sequelize');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     all: async (req, res) => {
@@ -47,6 +49,7 @@ module.exports = {
             let product = await Excursion.findByPk(req.params.id)
             let editProduct = {};
             let imageDir = '/img/img_travels';
+            console.log(product.image);
             if (typeof req.body.image === 'undefined') {
                 editProduct = {
                     ...req.body,
@@ -54,12 +57,14 @@ module.exports = {
                 };
             } else {
                 editProduct = req.body
-                fs.unlink(path.join(imageDir, product.image), (err) => {
-                    if (err) {
-                        console.error(err);
-                        return
-                    }
-                });
+                if (product.image) {
+                    fs.unlink(path.join(imageDir, product.image), (err) => {
+                        if (err) {
+                            console.error(err);
+                            return
+                        }
+                    });                    
+                }
             }
             await product.update(editProduct);
             res.redirect('/excursiones');
