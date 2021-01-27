@@ -34,14 +34,17 @@
                                 <input type="hidden" name="type" value="paquetes">
                                 <input type="hidden" name="id" value="<%= package.id %>">
                             </div>
-                            <button type="submit">Añadir a Mis Viajes</button>
-                        </form>
-                        <% if (locals.user) { %>
+                            <% if (locals.user) { %>
+                                <button type="submit">Añadir a Mis Viajes</button>
+                            </form>
+                            <% } else { %>
+                                </form>
+                                <a href="/users/login %>"><button>Añadir a Mis Viajes</button></a>     
+                                <% } %>
                             <% if (locals.user.admin) { %>
                                 <a href="/paquetes/delete/<%= package.id %>"><button>Eliminar</button></a>
                                 <a href="/paquetes/edit/<%= package.id %>"><button>Editar</button></a>                             
                             <% } %>                         
-                        <% } %>
                     </div>
                 </article>
                 <a href="/paquetes">Volver al listado</a>

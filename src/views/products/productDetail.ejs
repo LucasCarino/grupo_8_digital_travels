@@ -31,12 +31,17 @@
                                 <input type="hidden" name="type" value="<%= type %>">
                                 <input type="hidden" name="id" value="<%= product.id %>">
                             </div>
-                            <button type="submit">Añadir a Mis Viajes</button>
-                        </form>
                             <% if (locals.user) { %>
-                                <a href="/<%= type %>/delete/<%= product.id %>"><button>Eliminar</button></a>
-                                <a href="/<%= type %>/edit/<%= product.id %>"><button>Editar</button></a>
-                            <% } %>
+                                <button type="submit">Añadir a Mis Viajes</button>
+                            </form>
+                            <% } else { %>
+                                </form>
+                                <a href="/users/login %>"><button>Añadir a Mis Viajes</button></a>     
+                                <% } %>
+                            <% if (locals.user.admin) { %>
+                                <a href="/paquetes/delete/<%= product.id %>"><button>Eliminar</button></a>
+                                <a href="/paquetes/edit/<%= product.id %>"><button>Editar</button></a>                             
+                            <% } %>   
                     </div>
                 </article>
                 <a href="/<%= type %>">Volver al listado</a>
@@ -47,5 +52,4 @@
     </div>
     <script scr="/javascripts/detail.js" defer></script>
 </body>
-
 </html> 

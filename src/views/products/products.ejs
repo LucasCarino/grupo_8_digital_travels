@@ -25,6 +25,9 @@
                         </article>
                     </a>
                     <% }) %>
+                    <% if (locals.user.admin) { %>
+                        <a href="/paquetes/create" class="search__button">Crear nuevo paquete</a>  
+                    <% } %>
                 </section>
                 <h2 class="section__title">
                     ¿Buscas otro servicio?
