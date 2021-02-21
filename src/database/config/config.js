@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "dh_digital_travels",
-    "host": "127.0.0.1",
+    "username": "uvahhxkputkjrbvt",
+    "password": "IMGUrvyAMRDKqTox9fOs",
+    "database": "b4taui6tvoerdbvusmsh",
+    "host": "b4taui6tvoerdbvusmsh-mysql.services.clever-cloud.com",
     "dialect": "mysql",
     define: {
       underscored: true // para poder usar guion bajo
